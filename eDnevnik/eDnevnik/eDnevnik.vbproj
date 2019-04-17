@@ -78,12 +78,72 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrisanjeAdmina.Designer.vb">
+      <DependentUpon>BrisanjeAdmina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BrisanjeAdmina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrisanjeProfesora.Designer.vb">
+      <DependentUpon>BrisanjeProfesora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BrisanjeProfesora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrisanjeUcenika.Designer.vb">
+      <DependentUpon>BrisanjeUcenika.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BrisanjeUcenika.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Database.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2Admin.Designer.vb">
+      <DependentUpon>Form2Admin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InboxAdmini.Designer.vb">
+      <DependentUpon>InboxAdmini.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InboxAdmini.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InboxProfesori.Designer.vb">
+      <DependentUpon>InboxProfesori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InboxProfesori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InboxUcenici.Designer.vb">
+      <DependentUpon>InboxUcenici.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InboxUcenici.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaAdmina.Designer.vb">
+      <DependentUpon>IzmjenaAdmina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaAdmina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaProfesora.Designer.vb">
+      <DependentUpon>IzmjenaProfesora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaProfesora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaUcenika.Designer.vb">
+      <DependentUpon>IzmjenaUcenika.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaUcenika.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -101,16 +161,73 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SpremanjeAdmina.Designer.vb">
+      <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpremanjeAdmina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpremanjeProfesora.Designer.vb">
+      <DependentUpon>SpremanjeProfesora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpremanjeProfesora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpremanjeUcenika.Designer.vb">
+      <DependentUpon>SpremanjeUcenika.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SpremanjeUcenika.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BrisanjeAdmina.resx">
+      <DependentUpon>BrisanjeAdmina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrisanjeProfesora.resx">
+      <DependentUpon>BrisanjeProfesora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrisanjeUcenika.resx">
+      <DependentUpon>BrisanjeUcenika.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2Admin.resx">
+      <DependentUpon>Form2Admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboxAdmini.resx">
+      <DependentUpon>InboxAdmini.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboxProfesori.resx">
+      <DependentUpon>InboxProfesori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboxUcenici.resx">
+      <DependentUpon>InboxUcenici.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaAdmina.resx">
+      <DependentUpon>IzmjenaAdmina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaProfesora.resx">
+      <DependentUpon>IzmjenaProfesora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaUcenika.resx">
+      <DependentUpon>IzmjenaUcenika.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpremanjeAdmina.resx">
+      <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpremanjeProfesora.resx">
+      <DependentUpon>SpremanjeProfesora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpremanjeUcenika.resx">
+      <DependentUpon>SpremanjeUcenika.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +275,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\book 128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inbox 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back 64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permDel 32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recBin 32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />

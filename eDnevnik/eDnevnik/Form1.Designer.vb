@@ -25,22 +25,22 @@ Partial Class Form1Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1Login))
         Me.RadioButtonUcenik = New System.Windows.Forms.RadioButton()
         Me.RadioButtonAdmin = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxIme = New System.Windows.Forms.TextBox()
+        Me.TextBoxPrezime = New System.Windows.Forms.TextBox()
+        Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
-        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.ButtonRegistracija = New System.Windows.Forms.Button()
         Me.ButtonPrijava = New System.Windows.Forms.Button()
         Me.GroupBoxKorisnici.SuspendLayout()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadioButtonUcenik
@@ -51,7 +51,7 @@ Partial Class Form1Login
         Me.RadioButtonUcenik.Size = New System.Drawing.Size(59, 17)
         Me.RadioButtonUcenik.TabIndex = 3
         Me.RadioButtonUcenik.TabStop = True
-        Me.RadioButtonUcenik.Text = "Ucenik"
+        Me.RadioButtonUcenik.Text = "Učenik"
         Me.RadioButtonUcenik.UseVisualStyleBackColor = True
         '
         'RadioButtonAdmin
@@ -65,26 +65,32 @@ Partial Class Form1Login
         Me.RadioButtonAdmin.Text = "Admin"
         Me.RadioButtonAdmin.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TextBoxIme
         '
-        Me.TextBox1.Location = New System.Drawing.Point(220, 112)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(142, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TextBoxIme.Location = New System.Drawing.Point(220, 112)
+        Me.TextBoxIme.Name = "TextBoxIme"
+        Me.TextBoxIme.Size = New System.Drawing.Size(142, 20)
+        Me.TextBoxIme.TabIndex = 5
+        Me.TextBoxIme.Text = "Korisničko ime"
         '
-        'TextBox2
+        'TextBoxPrezime
         '
-        Me.TextBox2.Location = New System.Drawing.Point(220, 154)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(142, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.TextBoxPrezime.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TextBoxPrezime.Location = New System.Drawing.Point(220, 154)
+        Me.TextBoxPrezime.Name = "TextBoxPrezime"
+        Me.TextBoxPrezime.Size = New System.Drawing.Size(142, 20)
+        Me.TextBoxPrezime.TabIndex = 6
+        Me.TextBoxPrezime.Text = "Prezime"
         '
-        'TextBox3
+        'TextBoxSifra
         '
-        Me.TextBox3.Location = New System.Drawing.Point(220, 198)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(142, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.TextBoxSifra.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TextBoxSifra.Location = New System.Drawing.Point(220, 198)
+        Me.TextBoxSifra.Name = "TextBoxSifra"
+        Me.TextBoxSifra.Size = New System.Drawing.Size(142, 20)
+        Me.TextBoxSifra.TabIndex = 7
+        Me.TextBoxSifra.Text = "Šifra"
         '
         'RadioButtonProfesor
         '
@@ -113,15 +119,6 @@ Partial Class Form1Login
         Me.GroupBoxKorisnici.TabIndex = 12
         Me.GroupBoxKorisnici.TabStop = False
         '
-        'PictureBoxGemit
-        '
-        Me.PictureBoxGemit.Image = Global.eDnevnik.My.Resources.Resources.book_128x128
-        Me.PictureBoxGemit.Location = New System.Drawing.Point(385, 12)
-        Me.PictureBoxGemit.Name = "PictureBoxGemit"
-        Me.PictureBoxGemit.Size = New System.Drawing.Size(134, 130)
-        Me.PictureBoxGemit.TabIndex = 13
-        Me.PictureBoxGemit.TabStop = False
-        '
         'PictureBoxAdmin
         '
         Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
@@ -149,6 +146,15 @@ Partial Class Form1Login
         Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBoxProfesor.TabIndex = 8
         Me.PictureBoxProfesor.TabStop = False
+        '
+        'PictureBoxGemit
+        '
+        Me.PictureBoxGemit.Image = Global.eDnevnik.My.Resources.Resources.book_128x128
+        Me.PictureBoxGemit.Location = New System.Drawing.Point(385, 12)
+        Me.PictureBoxGemit.Name = "PictureBoxGemit"
+        Me.PictureBoxGemit.Size = New System.Drawing.Size(134, 130)
+        Me.PictureBoxGemit.TabIndex = 13
+        Me.PictureBoxGemit.TabStop = False
         '
         'ButtonRegistracija
         '
@@ -181,27 +187,29 @@ Partial Class Form1Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(531, 316)
+        Me.ClientSize = New System.Drawing.Size(527, 312)
         Me.Controls.Add(Me.PictureBoxGemit)
         Me.Controls.Add(Me.GroupBoxKorisnici)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxSifra)
+        Me.Controls.Add(Me.TextBoxPrezime)
+        Me.Controls.Add(Me.TextBoxIme)
         Me.Controls.Add(Me.ButtonRegistracija)
         Me.Controls.Add(Me.ButtonPrijava)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(547, 355)
         Me.MinimumSize = New System.Drawing.Size(547, 355)
         Me.Name = "Form1Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "eDnevnik"
         Me.GroupBoxKorisnici.ResumeLayout(False)
         Me.GroupBoxKorisnici.PerformLayout()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -212,9 +220,9 @@ Partial Class Form1Login
     Friend WithEvents RadioButtonProfesor As RadioButton
     Friend WithEvents RadioButtonUcenik As RadioButton
     Friend WithEvents RadioButtonAdmin As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxIme As TextBox
+    Friend WithEvents TextBoxPrezime As TextBox
+    Friend WithEvents TextBoxSifra As TextBox
     Friend WithEvents PictureBoxProfesor As PictureBox
     Friend WithEvents PictureBoxUcenik As PictureBox
     Friend WithEvents PictureBoxAdmin As PictureBox
