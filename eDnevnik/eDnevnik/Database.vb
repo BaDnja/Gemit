@@ -10,10 +10,12 @@ Public Class Database
         If Not duplicateDatabase(fullPath) Then
 
             Dim createTableAdministrator As String = "CREATE TABLE `administrator` (
-	                                                    `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	                                                    `username`	TEXT NOT NULL,
-	                                                    `password`	TEXT NOT NULL
-                                                        );"
+	                                                `id`	INTEGER NOT NULL,
+	                                                `username`	TEXT NOT NULL,
+	                                                `password`	TEXT NOT NULL,
+	                                                PRIMARY KEY(`id`)
+                                                    );"
+
             Dim createTableOcjena As String = "CREATE TABLE `ocjena` (
 	                                            `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	                                            `jmbg_ucenik`	INTEGER NOT NULL,
@@ -33,7 +35,8 @@ Public Class Database
 	                                            `ime`	TEXT NOT NULL,
 	                                            `prezime`	TEXT NOT NULL,
 	                                            `adresa`	TEXT NOT NULL,
-	                                            `datum_rodjenja`	TEXT NOT NULL
+	                                            `datum_rodjenja`	TEXT NOT NULL,
+	                                            `sifraProfesora`	INTEGER NOT NULL UNIQUE
                                                 );"
 
             Dim createTableUcenik As String = "CREATE TABLE `ucenik` (
@@ -44,7 +47,8 @@ Public Class Database
 	                                            `adresa`	TEXT NOT NULL,
 	                                            `datum_rodjenja`	TEXT NOT NULL,
 	                                            `godina`	INTEGER NOT NULL,
-	                                            `odjeljenje`	INTEGER NOT NULL
+	                                            `odjeljenje`	INTEGER NOT NULL,
+	                                            `sifraUcenika`	INTEGER NOT NULL UNIQUE
                                                 );"
 
             Using SqlConn As New SQLiteConnection(connectionString)
