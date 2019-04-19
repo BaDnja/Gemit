@@ -68,7 +68,7 @@ Partial Class Form1Login
         'TextBoxIme
         '
         Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxIme.Location = New System.Drawing.Point(220, 112)
+        Me.TextBoxIme.Location = New System.Drawing.Point(172, 122)
         Me.TextBoxIme.Name = "TextBoxIme"
         Me.TextBoxIme.Size = New System.Drawing.Size(142, 20)
         Me.TextBoxIme.TabIndex = 5
@@ -77,7 +77,7 @@ Partial Class Form1Login
         'TextBoxPrezime
         '
         Me.TextBoxPrezime.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxPrezime.Location = New System.Drawing.Point(220, 154)
+        Me.TextBoxPrezime.Location = New System.Drawing.Point(172, 164)
         Me.TextBoxPrezime.Name = "TextBoxPrezime"
         Me.TextBoxPrezime.Size = New System.Drawing.Size(142, 20)
         Me.TextBoxPrezime.TabIndex = 6
@@ -86,7 +86,7 @@ Partial Class Form1Login
         'TextBoxSifra
         '
         Me.TextBoxSifra.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxSifra.Location = New System.Drawing.Point(220, 198)
+        Me.TextBoxSifra.Location = New System.Drawing.Point(172, 208)
         Me.TextBoxSifra.Name = "TextBoxSifra"
         Me.TextBoxSifra.Size = New System.Drawing.Size(142, 20)
         Me.TextBoxSifra.TabIndex = 7
@@ -161,7 +161,7 @@ Partial Class Form1Login
         Me.ButtonRegistracija.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonRegistracija.Image = Global.eDnevnik.My.Resources.Resources.registration_32x32
         Me.ButtonRegistracija.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonRegistracija.Location = New System.Drawing.Point(297, 242)
+        Me.ButtonRegistracija.Location = New System.Drawing.Point(389, 271)
         Me.ButtonRegistracija.Name = "ButtonRegistracija"
         Me.ButtonRegistracija.Size = New System.Drawing.Size(130, 35)
         Me.ButtonRegistracija.TabIndex = 1
@@ -174,7 +174,7 @@ Partial Class Form1Login
         Me.ButtonPrijava.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPrijava.Image = Global.eDnevnik.My.Resources.Resources.login_32x32
         Me.ButtonPrijava.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonPrijava.Location = New System.Drawing.Point(167, 242)
+        Me.ButtonPrijava.Location = New System.Drawing.Point(191, 243)
         Me.ButtonPrijava.Name = "ButtonPrijava"
         Me.ButtonPrijava.Size = New System.Drawing.Size(100, 35)
         Me.ButtonPrijava.TabIndex = 0

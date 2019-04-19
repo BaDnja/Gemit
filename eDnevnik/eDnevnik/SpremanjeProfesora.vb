@@ -88,4 +88,8 @@
         Me.Hide()
         Form2Admin.Show()
     End Sub
+
+    Private Sub SpremanjeProfesora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
