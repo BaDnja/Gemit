@@ -161,7 +161,9 @@ Partial Class IzmjenaProfesora
         Me.Controls.Add(Me.ButtonNazad)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(749, 510)
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(749, 510)
         Me.Name = "IzmjenaProfesora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

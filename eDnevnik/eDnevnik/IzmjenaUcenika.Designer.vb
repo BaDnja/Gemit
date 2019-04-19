@@ -22,6 +22,7 @@ Partial Class IzmjenaUcenika
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IzmjenaUcenika))
         Me.TextBoxOdjeljenje = New System.Windows.Forms.TextBox()
         Me.TextBoxGodina = New System.Windows.Forms.TextBox()
         Me.TextBoxImeRod = New System.Windows.Forms.TextBox()
@@ -201,7 +202,8 @@ Partial Class IzmjenaUcenika
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ClientSize = New System.Drawing.Size(796, 446)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.TextBoxOdjeljenje)
@@ -216,6 +218,11 @@ Partial Class IzmjenaUcenika
         Me.Controls.Add(Me.TextBoxPrezime)
         Me.Controls.Add(Me.TextBoxIme)
         Me.Controls.Add(Me.TextBoxjmbg)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(816, 489)
+        Me.MinimumSize = New System.Drawing.Size(816, 489)
         Me.Name = "IzmjenaUcenika"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Izmjena ucenika"

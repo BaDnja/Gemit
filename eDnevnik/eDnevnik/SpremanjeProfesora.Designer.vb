@@ -22,6 +22,7 @@ Partial Class SpremanjeProfesora
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SpremanjeProfesora))
         Me.TextBoxjmbg = New System.Windows.Forms.TextBox()
         Me.TextBoxIme = New System.Windows.Forms.TextBox()
         Me.TextBoxPrezime = New System.Windows.Forms.TextBox()
@@ -145,6 +146,7 @@ Partial Class SpremanjeProfesora
         Me.Controls.Add(Me.TextBoxjmbg)
         Me.Controls.Add(Me.ButtonNazad)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(552, 250)
         Me.MinimumSize = New System.Drawing.Size(552, 250)

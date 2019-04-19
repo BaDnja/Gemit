@@ -22,6 +22,7 @@ Partial Class SpremanjeUcenika
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SpremanjeUcenika))
         Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.TextBoxDatumR = New System.Windows.Forms.TextBox()
         Me.TextBoxAdresa = New System.Windows.Forms.TextBox()
@@ -167,7 +168,7 @@ Partial Class SpremanjeUcenika
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(536, 281)
+        Me.ClientSize = New System.Drawing.Size(532, 277)
         Me.Controls.Add(Me.TextBoxOdjeljenje)
         Me.Controls.Add(Me.TextBoxGodina)
         Me.Controls.Add(Me.TextBoxImeRod)
@@ -181,6 +182,11 @@ Partial Class SpremanjeUcenika
         Me.Controls.Add(Me.TextBoxIme)
         Me.Controls.Add(Me.TextBoxjmbg)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(552, 320)
+        Me.MinimumSize = New System.Drawing.Size(552, 320)
         Me.Name = "SpremanjeUcenika"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Spremanje ucenika"
