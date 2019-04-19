@@ -31,7 +31,7 @@ Public Class Database
                                                 );"
 
             Dim createTableProfesor As String = "CREATE TABLE `profesor` (
-	                                            `jmbg`	INTEGER NOT NULL,
+	                                            `jmbgProfesor`	INTEGER NOT NULL,
 	                                            `ime`	TEXT NOT NULL,
 	                                            `prezime`	TEXT NOT NULL,
 	                                            `adresa`	TEXT NOT NULL,
@@ -40,7 +40,7 @@ Public Class Database
                                                 );"
 
             Dim createTableUcenik As String = "CREATE TABLE `ucenik` (
-	                                            `jmbg`	INTEGER NOT NULL,
+	                                            `jmbgUcenik`	INTEGER NOT NULL,
 	                                            `ime`	TEXT NOT NULL,
 	                                            `prezime`	TEXT NOT NULL,
 	                                            `ime_roditelja`	TEXT NOT NULL,
