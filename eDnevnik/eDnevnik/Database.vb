@@ -10,10 +10,9 @@ Public Class Database
         If Not duplicateDatabase(fullPath) Then
 
             Dim createTableAdministrator As String = "CREATE TABLE `administrator` (
-	                                                `id`	INTEGER NOT NULL,
+	                                                `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	                                                `username`	TEXT NOT NULL,
-	                                                `password`	TEXT NOT NULL,
-	                                                PRIMARY KEY(`id`)
+	                                                `password`	TEXT NOT NULL
                                                     );"
 
             Dim createTableOcjena As String = "CREATE TABLE `ocjena` (
@@ -51,10 +50,15 @@ Public Class Database
 	                                            `sifraUcenika`	INTEGER NOT NULL UNIQUE
                                                 );"
 
+            Dim insertMainAdmin As String = "insert into administrator values(1, 'mainAdmin', 'admin123')"
+
             Using SqlConn As New SQLiteConnection(connectionString)
                 SqlConn.Open()
                 Dim cmdAdmin As New SQLiteCommand(createTableAdministrator, SqlConn)
                 cmdAdmin.ExecuteNonQuery()
+
+                Dim cmdInsertAdmin As New SQLiteCommand(insertMainAdmin, SqlConn)
+                cmdInsertAdmin.ExecuteNonQuery()
 
                 Dim cmdOcjena As New SQLiteCommand(createTableOcjena, SqlConn)
                 cmdOcjena.ExecuteNonQuery()
@@ -68,6 +72,7 @@ Public Class Database
                 Dim cmdUcenik As New SQLiteCommand(createTableUcenik, SqlConn)
                 cmdUcenik.ExecuteNonQuery()
 
+                SqlConn.Close()
             End Using
         End If
     End Sub
