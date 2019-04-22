@@ -3,6 +3,24 @@
 Public Class Form1Login
     Dim Database As New Database()
 
+    ' Subs collection for setting default properties to Text boxes
+    Private Sub setDefaultTxtBoxIme()
+        TextBoxIme.Text = "Korisničko ime"
+        TextBoxIme.ForeColor = Color.Gray
+    End Sub
+
+    Private Sub setDefaultTxtBoxPrezime()
+        TextBoxPrezime.Text = "Prezime"
+        TextBoxPrezime.ForeColor = Color.Gray
+    End Sub
+
+    Private Sub setDefaultTxtBoxSifra()
+        TextBoxSifra.Text = "Šifra"
+        TextBoxSifra.UseSystemPasswordChar = False
+        TextBoxSifra.ForeColor = Color.Gray
+    End Sub
+
+    '-----------------------------
     Private Sub TextBoxIme_Enter(sender As Object, e As EventArgs) Handles TextBoxIme.Enter
         If (TextBoxIme.Text = "Korisničko ime") Then
             TextBoxIme.Text = ""
@@ -12,8 +30,7 @@ Public Class Form1Login
 
     Private Sub TextBoxIme_Leave(sender As Object, e As EventArgs) Handles TextBoxIme.Leave
         If (TextBoxIme.Text = "") Then
-            TextBoxIme.Text = "Korisničko ime"
-            TextBoxIme.ForeColor = Color.Gray
+            setDefaultTxtBoxIme()
         End If
     End Sub
 
@@ -26,66 +43,45 @@ Public Class Form1Login
 
     Private Sub TextBoxPrezime_Leave(sender As Object, e As EventArgs) Handles TextBoxPrezime.Leave
         If (TextBoxPrezime.Text = "") Then
-            TextBoxPrezime.Text = "Prezime"
-            TextBoxPrezime.ForeColor = Color.Gray
+            setDefaultTxtBoxPrezime()
         End If
     End Sub
 
     Private Sub TextBoxSifra_Enter(sender As Object, e As EventArgs) Handles TextBoxSifra.Enter
+        ButtonEye.Show()
         If (TextBoxSifra.Text = "Šifra") Then
             TextBoxSifra.Text = ""
+            TextBoxSifra.UseSystemPasswordChar = True
             TextBoxSifra.ForeColor = Color.Black
         End If
     End Sub
 
     Private Sub TextBoxSifra_Leave(sender As Object, e As EventArgs) Handles TextBoxSifra.Leave
+        ButtonEye.Hide()
         If (TextBoxSifra.Text = "") Then
-            TextBoxSifra.Text = "Šifra"
-            TextBoxSifra.ForeColor = Color.Gray
+            setDefaultTxtBoxSifra()
         End If
     End Sub
     ' ---------------------------------------
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Database.createPredefinedDatabase()
-
+        ButtonEye.Hide()
     End Sub
 
-    ' Sub that will set isPassedName as True if NAME is passed login
-    Private Function isValidUser(colonName As String, tableName As String, checkParameter As String) As Boolean
-        Dim isPassed As Boolean
-
-        Using sqlConn As New SQLiteConnection(Database.connectionString)
-            Dim readUser As String = String.Format("SELECT {0} FROM {1} WHERE {0}='{2}'", colonName, tableName, checkParameter)
-            Dim cmdUser As New SQLiteCommand(readUser, sqlConn)
-            sqlConn.Open()
-
-            Dim readerUser As SQLiteDataReader = cmdUser.ExecuteReader()
-            While readerUser.Read()
-                For i = 0 To readerUser.FieldCount - 1
-                    If readerUser.GetValue(i) = Name Then
-                        isPassed = True
-                        Exit For
-                    End If
-                Next
-            End While
-            sqlConn.Close()
-        End Using
-        Return isPassed
-    End Function
-
     Private Sub ButtonPrijava_Click(sender As Object, e As EventArgs) Handles ButtonPrijava.Click
-        If RadioButtonProfesor.Checked() Then
-            Dim c1 As Boolean = isValidUser("ime", "profesor", TextBoxIme.Text)
-            'Dim c2 As Boolean = isValidUser("prezime", "profesor", TextBoxPrezime.Text)
-            'Dim c3 As Boolean = isValidUser("sifraProfesora", "profesor", TextBoxSifra.Text)
-            MessageBox.Show(c1)
-            'MessageBox.Show(c2)
-            'MessageBox.Show(c3)
+        If RadioButtonAdmin.Checked() Then
 
-            'If c1 = True And c2 = True And c3 = True Then
-            '    MessageBox.Show("User passed!")
-            'End If
+            If Database.isAdminValid() = True Then
+                setDefaultTxtBoxIme()
+                setDefaultTxtBoxSifra()
+                Me.Hide()
+                Form2Admin.Show()
+            Else
+                MessageBox.Show("Korisnik ne postoji!")
+                setDefaultTxtBoxIme()
+                setDefaultTxtBoxSifra()
+            End If
 
         End If
 
@@ -101,5 +97,15 @@ Public Class Form1Login
 
     Private Sub RadioButtonAdmin_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonAdmin.CheckedChanged
         TextBoxPrezime.Hide()
+    End Sub
+
+    Private Sub ButtonEye_MouseEnter(sender As Object, e As EventArgs) Handles ButtonEye.MouseEnter
+
+        TextBoxSifra.UseSystemPasswordChar = False
+    End Sub
+
+    Private Sub ButtonEye_MouseLeave(sender As Object, e As EventArgs) Handles ButtonEye.MouseLeave
+
+        TextBoxSifra.UseSystemPasswordChar = True
     End Sub
 End Class

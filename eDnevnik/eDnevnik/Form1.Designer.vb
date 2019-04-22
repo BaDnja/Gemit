@@ -33,6 +33,7 @@ Partial Class Form1Login
         Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
+        Me.ButtonEye = New System.Windows.Forms.Button()
         Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.ButtonRegistracija = New System.Windows.Forms.Button()
         Me.ButtonPrijava = New System.Windows.Forms.Button()
@@ -147,6 +148,17 @@ Partial Class Form1Login
         Me.PictureBoxProfesor.TabIndex = 8
         Me.PictureBoxProfesor.TabStop = False
         '
+        'ButtonEye
+        '
+        Me.ButtonEye.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ButtonEye.BackgroundImage = Global.eDnevnik.My.Resources.Resources.eye_32x32
+        Me.ButtonEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ButtonEye.Location = New System.Drawing.Point(320, 198)
+        Me.ButtonEye.Name = "ButtonEye"
+        Me.ButtonEye.Size = New System.Drawing.Size(38, 38)
+        Me.ButtonEye.TabIndex = 14
+        Me.ButtonEye.UseVisualStyleBackColor = False
+        '
         'PictureBoxGemit
         '
         Me.PictureBoxGemit.Image = Global.eDnevnik.My.Resources.Resources.book_128x128
@@ -188,6 +200,7 @@ Partial Class Form1Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(527, 312)
+        Me.Controls.Add(Me.ButtonEye)
         Me.Controls.Add(Me.PictureBoxGemit)
         Me.Controls.Add(Me.GroupBoxKorisnici)
         Me.Controls.Add(Me.TextBoxSifra)
@@ -228,4 +241,5 @@ Partial Class Form1Login
     Friend WithEvents PictureBoxAdmin As PictureBox
     Friend WithEvents GroupBoxKorisnici As GroupBox
     Friend WithEvents PictureBoxGemit As PictureBox
+    Friend WithEvents ButtonEye As Button
 End Class

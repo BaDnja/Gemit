@@ -81,4 +81,33 @@ Public Class Database
         Return System.IO.File.Exists(fullPath)
     End Function
 
+    Public Function isAdminValid() As Boolean
+        Dim sql As String = "SELECT * FROM administrator WHERE username = @username AND password = @password"
+        Dim isValid As Boolean = False
+        Try
+            Using conn As New SQLiteConnection(connectionString)
+                Using cmd As New SQLiteCommand(conn)
+                    cmd.Parameters.AddWithValue("@username", Form1Login.TextBoxIme.Text)
+                    cmd.Parameters.AddWithValue("@password", Form1Login.TextBoxSifra.Text)
+                    cmd.CommandText = sql
+                    conn.Open()
+                    Using da As New SQLiteDataAdapter(cmd)
+                        Dim dt As New DataTable
+                        da.Fill(dt)
+
+                        If dt.Rows.Count > 0 Then
+
+                            isValid = True
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        Return isValid
+
+    End Function
+
 End Class
