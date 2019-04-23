@@ -26,7 +26,6 @@ Partial Class Form1Login
         Me.RadioButtonUcenik = New System.Windows.Forms.RadioButton()
         Me.RadioButtonAdmin = New System.Windows.Forms.RadioButton()
         Me.TextBoxIme = New System.Windows.Forms.TextBox()
-        Me.TextBoxPrezime = New System.Windows.Forms.TextBox()
         Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
@@ -69,25 +68,16 @@ Partial Class Form1Login
         'TextBoxIme
         '
         Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxIme.Location = New System.Drawing.Point(172, 122)
+        Me.TextBoxIme.Location = New System.Drawing.Point(173, 111)
         Me.TextBoxIme.Name = "TextBoxIme"
         Me.TextBoxIme.Size = New System.Drawing.Size(142, 20)
         Me.TextBoxIme.TabIndex = 5
         Me.TextBoxIme.Text = "Korisničko ime"
         '
-        'TextBoxPrezime
-        '
-        Me.TextBoxPrezime.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxPrezime.Location = New System.Drawing.Point(172, 164)
-        Me.TextBoxPrezime.Name = "TextBoxPrezime"
-        Me.TextBoxPrezime.Size = New System.Drawing.Size(142, 20)
-        Me.TextBoxPrezime.TabIndex = 6
-        Me.TextBoxPrezime.Text = "Prezime"
-        '
         'TextBoxSifra
         '
         Me.TextBoxSifra.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxSifra.Location = New System.Drawing.Point(172, 208)
+        Me.TextBoxSifra.Location = New System.Drawing.Point(173, 146)
         Me.TextBoxSifra.Name = "TextBoxSifra"
         Me.TextBoxSifra.Size = New System.Drawing.Size(142, 20)
         Me.TextBoxSifra.TabIndex = 7
@@ -114,7 +104,7 @@ Partial Class Form1Login
         Me.GroupBoxKorisnici.Controls.Add(Me.PictureBoxUcenik)
         Me.GroupBoxKorisnici.Controls.Add(Me.RadioButtonAdmin)
         Me.GroupBoxKorisnici.Controls.Add(Me.PictureBoxProfesor)
-        Me.GroupBoxKorisnici.Location = New System.Drawing.Point(12, 94)
+        Me.GroupBoxKorisnici.Location = New System.Drawing.Point(12, 12)
         Me.GroupBoxKorisnici.Name = "GroupBoxKorisnici"
         Me.GroupBoxKorisnici.Size = New System.Drawing.Size(139, 212)
         Me.GroupBoxKorisnici.TabIndex = 12
@@ -153,7 +143,7 @@ Partial Class Form1Login
         Me.ButtonEye.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ButtonEye.BackgroundImage = Global.eDnevnik.My.Resources.Resources.eye_32x32
         Me.ButtonEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ButtonEye.Location = New System.Drawing.Point(320, 198)
+        Me.ButtonEye.Location = New System.Drawing.Point(321, 136)
         Me.ButtonEye.Name = "ButtonEye"
         Me.ButtonEye.Size = New System.Drawing.Size(38, 38)
         Me.ButtonEye.TabIndex = 14
@@ -173,7 +163,7 @@ Partial Class Form1Login
         Me.ButtonRegistracija.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonRegistracija.Image = Global.eDnevnik.My.Resources.Resources.registration_32x32
         Me.ButtonRegistracija.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonRegistracija.Location = New System.Drawing.Point(389, 271)
+        Me.ButtonRegistracija.Location = New System.Drawing.Point(389, 189)
         Me.ButtonRegistracija.Name = "ButtonRegistracija"
         Me.ButtonRegistracija.Size = New System.Drawing.Size(130, 35)
         Me.ButtonRegistracija.TabIndex = 1
@@ -186,7 +176,7 @@ Partial Class Form1Login
         Me.ButtonPrijava.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPrijava.Image = Global.eDnevnik.My.Resources.Resources.login_32x32
         Me.ButtonPrijava.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonPrijava.Location = New System.Drawing.Point(191, 243)
+        Me.ButtonPrijava.Location = New System.Drawing.Point(192, 181)
         Me.ButtonPrijava.Name = "ButtonPrijava"
         Me.ButtonPrijava.Size = New System.Drawing.Size(100, 35)
         Me.ButtonPrijava.TabIndex = 0
@@ -199,12 +189,11 @@ Partial Class Form1Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ClientSize = New System.Drawing.Size(527, 312)
+        Me.ClientSize = New System.Drawing.Size(525, 237)
         Me.Controls.Add(Me.ButtonEye)
         Me.Controls.Add(Me.PictureBoxGemit)
         Me.Controls.Add(Me.GroupBoxKorisnici)
         Me.Controls.Add(Me.TextBoxSifra)
-        Me.Controls.Add(Me.TextBoxPrezime)
         Me.Controls.Add(Me.TextBoxIme)
         Me.Controls.Add(Me.ButtonRegistracija)
         Me.Controls.Add(Me.ButtonPrijava)
@@ -212,8 +201,8 @@ Partial Class Form1Login
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(547, 355)
-        Me.MinimumSize = New System.Drawing.Size(547, 355)
+        Me.MaximumSize = New System.Drawing.Size(545, 280)
+        Me.MinimumSize = New System.Drawing.Size(545, 280)
         Me.Name = "Form1Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "eDnevnik"
@@ -234,7 +223,6 @@ Partial Class Form1Login
     Friend WithEvents RadioButtonUcenik As RadioButton
     Friend WithEvents RadioButtonAdmin As RadioButton
     Friend WithEvents TextBoxIme As TextBox
-    Friend WithEvents TextBoxPrezime As TextBox
     Friend WithEvents TextBoxSifra As TextBox
     Friend WithEvents PictureBoxProfesor As PictureBox
     Friend WithEvents PictureBoxUcenik As PictureBox

@@ -9,11 +9,6 @@ Public Class Form1Login
         TextBoxIme.ForeColor = Color.Gray
     End Sub
 
-    Private Sub setDefaultTxtBoxPrezime()
-        TextBoxPrezime.Text = "Prezime"
-        TextBoxPrezime.ForeColor = Color.Gray
-    End Sub
-
     Private Sub setDefaultTxtBoxSifra()
         TextBoxSifra.Text = "Šifra"
         TextBoxSifra.UseSystemPasswordChar = False
@@ -31,19 +26,6 @@ Public Class Form1Login
     Private Sub TextBoxIme_Leave(sender As Object, e As EventArgs) Handles TextBoxIme.Leave
         If (TextBoxIme.Text = "") Then
             setDefaultTxtBoxIme()
-        End If
-    End Sub
-
-    Private Sub TextBoxPrezime_Enter(sender As Object, e As EventArgs) Handles TextBoxPrezime.Enter
-        If (TextBoxPrezime.Text = "Prezime") Then
-            TextBoxPrezime.Text = ""
-            TextBoxPrezime.ForeColor = Color.Black
-        End If
-    End Sub
-
-    Private Sub TextBoxPrezime_Leave(sender As Object, e As EventArgs) Handles TextBoxPrezime.Leave
-        If (TextBoxPrezime.Text = "") Then
-            setDefaultTxtBoxPrezime()
         End If
     End Sub
 
@@ -70,33 +52,51 @@ Public Class Form1Login
     End Sub
 
     Private Sub ButtonPrijava_Click(sender As Object, e As EventArgs) Handles ButtonPrijava.Click
-        If RadioButtonAdmin.Checked() Then
 
-            If Database.isAdminValid() = True Then
-                setDefaultTxtBoxIme()
-                setDefaultTxtBoxSifra()
-                Me.Hide()
-                Form2Admin.Show()
-            Else
-                MessageBox.Show("Korisnik ne postoji!")
-                setDefaultTxtBoxIme()
-                setDefaultTxtBoxSifra()
+        If RadioButtonProfesor.Checked = False And RadioButtonUcenik.Checked = False And RadioButtonAdmin.Checked = False Then
+            MessageBox.Show("Odaberite tip računa!")
+        Else
+            If RadioButtonProfesor.Checked() Then
+                If Database.isUserValid() = True Then
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                    MessageBox.Show("Profesor ulogovan")
+                Else
+                    MessageBox.Show("Profesor ne postoji!")
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                End If
             End If
 
+            If RadioButtonUcenik.Checked() Then
+                If Database.isUserValid() = True Then
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                    MessageBox.Show("Učenik ulogovan")
+                Else
+                    MessageBox.Show("Učenik ne postoji!")
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                End If
+            End If
+
+
+            If RadioButtonAdmin.Checked() Then
+
+                If Database.isUserValid() = True Then
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                    Me.Hide()
+                    Form2Admin.Show()
+                Else
+                    MessageBox.Show("Admin ne postoji!")
+                    setDefaultTxtBoxIme()
+                    setDefaultTxtBoxSifra()
+                End If
+            End If
         End If
 
-    End Sub
 
-    Private Sub RadioButtonProfesor_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonProfesor.CheckedChanged
-        TextBoxPrezime.Show()
-    End Sub
-
-    Private Sub RadioButtonUcenik_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonUcenik.CheckedChanged
-        TextBoxPrezime.Show()
-    End Sub
-
-    Private Sub RadioButtonAdmin_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonAdmin.CheckedChanged
-        TextBoxPrezime.Hide()
     End Sub
 
     Private Sub ButtonEye_MouseEnter(sender As Object, e As EventArgs) Handles ButtonEye.MouseEnter
