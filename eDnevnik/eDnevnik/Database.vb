@@ -9,68 +9,91 @@ Public Class Database
     Public Sub createPredefinedDatabase()
         If Not duplicateDatabase(fullPath) Then
 
-            Dim createTableAdministrator As String = "CREATE TABLE `administrator` (
-	                                                `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	                                                `username`	TEXT NOT NULL,
-	                                                `password`	TEXT NOT NULL
-                                                    );"
+            Dim createUserTypeTable As String = "CREATE TABLE tbl_user_type(
+	                                                type_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	                                                type_name TEXT NOT NULL);"
 
-            Dim createTableOcjena As String = "CREATE TABLE `ocjena` (
-	                                            `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	                                            `jmbg_ucenik`	INTEGER NOT NULL,
-	                                            `sifra_predmeta`	TEXT NOT NULL,
-	                                            `datum_ocjene`	TEXT NOT NULL,
-	                                            `dodjeljena_ocjena`	INTEGER NOT NULL
-                                                );"
+            Dim createUserTable As String = "CREATE TABLE tbl_user(
+	                                            user_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	                                            user_type INTEGER NOT NULL,
+	                                            user_first_name TEXT NOT NULL,
+	                                            user_last_name TEXT NOT NULL,
+	                                            user_parent_name TEXT NULL,
+	                                            user_jmbg TEXT NULL,
+	                                            user_address TEXT NULL,
+	                                            user_birthdate TEXT NULL,
+	                                            user_username TEXT NOT NULL,
+	                                            user_password TEXT NOT NULL,
+                                            CONSTRAINT fk_user
+                                                FOREIGN KEY (user_type)
+                                                REFERENCES tbl_user_type(type_id));"
 
-            Dim createTablePredmet As String = "CREATE TABLE `predmet` (
-	                                            `sifra_predmeta`	TEXT NOT NULL,
-	                                            `naziv`	TEXT NOT NULL,
-	                                            `jmbg_profesor`	INTEGER NOT NULL
-                                                );"
+            Dim createStudentInfoTable As String = "CREATE TABLE tbl_student_info(
+	                                                    student_info_id INTEGER PRIMARY KEY NOT NULL,
+	                                                    student_id INTEGER NOT NULL,
+	                                                    year INTEGER NOT NULL,
+	                                                    class TEXT NOT NULL,
+                                                    CONSTRAINT fk_user_info
+                                                        FOREIGN KEY (student_id)
+                                                        REFERENCES tbl_user(user_id));"
 
-            Dim createTableProfesor As String = "CREATE TABLE `profesor` (
-	                                            `jmbgProfesor`	INTEGER NOT NULL,
-	                                            `ime`	TEXT NOT NULL,
-	                                            `prezime`	TEXT NOT NULL,
-	                                            `adresa`	TEXT NOT NULL,
-	                                            `datum_rodjenja`	TEXT NOT NULL,
-	                                            `sifraProfesora`	INTEGER NOT NULL UNIQUE
-                                                );"
+            Dim createSubjectTable As String = "CREATE TABLE tbl_subject(
+	                                                subject_id INTEGER PRIMARY KEY NOT NULL,
+	                                                user_id INTEGER NOT NULL,
+	                                                subject_name TEXT NOT NULL,
+                                                CONSTRAINT fk_subject
+                                                    FOREIGN KEY (user_id)
+                                                    REFERENCES tbl_user(user_id));"
 
-            Dim createTableUcenik As String = "CREATE TABLE `ucenik` (
-	                                            `jmbgUcenik`	INTEGER NOT NULL,
-	                                            `ime`	TEXT NOT NULL,
-	                                            `prezime`	TEXT NOT NULL,
-	                                            `ime_roditelja`	TEXT NOT NULL,
-	                                            `adresa`	TEXT NOT NULL,
-	                                            `datum_rodjenja`	TEXT NOT NULL,
-	                                            `godina`	INTEGER NOT NULL,
-	                                            `odjeljenje`	INTEGER NOT NULL,
-	                                            `sifraUcenika`	INTEGER NOT NULL UNIQUE
-                                                );"
+            Dim createScoreTable As String = "CREATE TABLE tbl_score(
+	                                                score_id INTEGER PRIMARY KEY NOT NULL,
+	                                                user_id INTEGER NOT NULL,
+	                                                subject_id INTEGER NOT NULL,
+	                                                date TEXT NOT NULL,
+	                                                score TEXT NOT NULL,
+                                                CONSTRAINT fk_score_user
+                                                    FOREIGN KEY (user_id)
+                                                    REFERENCES tbl_user(user_id),
+                                                CONSTRAINT fk_score_subject
+                                                    FOREIGN KEY (subject_id)
+                                                    REFERENCES tbl_subject(subject_id));"
 
-            Dim insertMainAdmin As String = "insert into administrator values(1, 'mainAdmin', 'admin123')"
+            Dim insertIntoUserType As String = "INSERT INTO tbl_user_type (type_name) VALUES ('Administrator'), ('Professor'), ('Student');"
+
+            Dim insertAdminIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (1, 'Amar', 'Badnjević', 'amar.badnjevic', 'password123');"
+
+            Dim insertProfIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (2, 'Rešad', 'Hajdarpašić', 'resad.hajdarpasic', 'pass1!');"
+
+            Dim insertStudIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (3, 'Ognjen', 'Vujasinovic', 'ognjen.vujasinovic', 'pw1!');"
 
             Using SqlConn As New SQLiteConnection(connectionString)
                 SqlConn.Open()
-                Dim cmdAdmin As New SQLiteCommand(createTableAdministrator, SqlConn)
-                cmdAdmin.ExecuteNonQuery()
+                Dim cmdUserType As New SQLiteCommand(createUserTypeTable, SqlConn)
+                cmdUserType.ExecuteNonQuery()
 
-                Dim cmdInsertAdmin As New SQLiteCommand(insertMainAdmin, SqlConn)
-                cmdInsertAdmin.ExecuteNonQuery()
+                Dim cmdUser As New SQLiteCommand(createUserTable, SqlConn)
+                cmdUser.ExecuteNonQuery()
 
-                Dim cmdOcjena As New SQLiteCommand(createTableOcjena, SqlConn)
-                cmdOcjena.ExecuteNonQuery()
+                Dim cmdStudentInfo As New SQLiteCommand(createStudentInfoTable, SqlConn)
+                cmdStudentInfo.ExecuteNonQuery()
 
-                Dim cmdPredmet As New SQLiteCommand(createTablePredmet, SqlConn)
-                cmdPredmet.ExecuteNonQuery()
+                Dim cmdSubject As New SQLiteCommand(createSubjectTable, SqlConn)
+                cmdSubject.ExecuteNonQuery()
 
-                Dim cmdProfesor As New SQLiteCommand(createTableProfesor, SqlConn)
-                cmdProfesor.ExecuteNonQuery()
+                Dim cmdScore As New SQLiteCommand(createScoreTable, SqlConn)
+                cmdScore.ExecuteNonQuery()
 
-                Dim cmdUcenik As New SQLiteCommand(createTableUcenik, SqlConn)
-                cmdUcenik.ExecuteNonQuery()
+                Dim cmdInsertUserType As New SQLiteCommand(insertIntoUserType, SqlConn)
+                cmdInsertUserType.ExecuteNonQuery()
+
+                Dim cmdInsertAdminUser As New SQLiteCommand(insertAdminIntoUser, SqlConn)
+                cmdInsertAdminUser.ExecuteNonQuery()
+
+                Dim cmdInsertProfUser As New SQLiteCommand(insertProfIntoUser, SqlConn)
+                cmdInsertProfUser.ExecuteNonQuery()
+
+                Dim cmdInserStudUser As New SQLiteCommand(insertStudIntoUser, SqlConn)
+                cmdInserStudUser.ExecuteNonQuery()
 
                 SqlConn.Close()
             End Using
@@ -81,14 +104,25 @@ Public Class Database
         Return System.IO.File.Exists(fullPath)
     End Function
 
-    Public Function isAdminValid() As Boolean
-        Dim sql As String = "SELECT * FROM administrator WHERE username = @username AND password = @password"
+    Public Function isUserValid() As Boolean
+        Dim sql As String = "SELECT * FROM tbl_user WHERE user_type=@type AND user_username = @username AND user_password = @password"
         Dim isValid As Boolean = False
         Try
             Using conn As New SQLiteConnection(connectionString)
                 Using cmd As New SQLiteCommand(conn)
                     cmd.Parameters.AddWithValue("@username", Form1Login.TextBoxIme.Text)
                     cmd.Parameters.AddWithValue("@password", Form1Login.TextBoxSifra.Text)
+                    If Form1Login.RadioButtonAdmin.Checked() Then
+                        cmd.Parameters.AddWithValue("@type", 1)
+                    End If
+
+                    If Form1Login.RadioButtonProfesor.Checked() Then
+                        cmd.Parameters.AddWithValue("@type", 2)
+                    End If
+
+                    If Form1Login.RadioButtonUcenik.Checked() Then
+                        cmd.Parameters.AddWithValue("@type", 3)
+                    End If
                     cmd.CommandText = sql
                     conn.Open()
                     Using da As New SQLiteDataAdapter(cmd)
