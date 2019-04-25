@@ -19,10 +19,10 @@ Public Class Database
 	                                            user_first_name TEXT NOT NULL,
 	                                            user_last_name TEXT NOT NULL,
 	                                            user_parent_name TEXT NULL,
-	                                            user_jmbg TEXT NULL,
+	                                            user_jmbg TEXT NULL UNIQUE NOT NULL,
 	                                            user_address TEXT NULL,
 	                                            user_birthdate TEXT NULL,
-	                                            user_username TEXT NOT NULL,
+	                                            user_username TEXT NOT NULL UNIQUE,
 	                                            user_password TEXT NOT NULL,
                                             CONSTRAINT fk_user
                                                 FOREIGN KEY (user_type)
@@ -58,13 +58,25 @@ Public Class Database
                                                     FOREIGN KEY (subject_id)
                                                     REFERENCES tbl_subject(subject_id));"
 
+            Dim createRegTable As String = "CREATE TABLE tbl_registration(
+                                            reg_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                                            reg_type_id INTEGER NOT NULL,
+                                            reg_first_name TEXT NOT NULL,
+                                            reg_last_name TEXT NOT NULL,
+                                            reg_jmbg TEXT NULL UNIQUE NOT NULL,
+                                            reg_username TEXT NOT NULL UNIQUE,
+                                            reg_password TEXT NOT NULL,
+                                            reg_parent_name TEXT NULL,
+                                            reg_address TEXT NULL,
+                                            reg_birthdate TEXT NULL);"
+
             Dim insertIntoUserType As String = "INSERT INTO tbl_user_type (type_name) VALUES ('Administrator'), ('Professor'), ('Student');"
 
-            Dim insertAdminIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (1, 'Amar', 'Badnjević', 'amar.badnjevic', 'password123');"
+            Dim insertAdminIntoUser As String = String.Format("INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_jmbg, user_username, user_password) VALUES (1, 'Amar', 'Badnjević', '0909998163305', 'amar.badnjevic', '{0}');", Encryption.hashString("password123", "0909998163305"))
 
-            Dim insertProfIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (2, 'Rešad', 'Hajdarpašić', 'resad.hajdarpasic', 'pass1!');"
+            Dim insertProfIntoUser As String = String.Format("INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_jmbg, user_username, user_password) VALUES (2, 'Rešad', 'Hajdarpašić', '0607989245678', 'resad.hajdarpasic', '{0}');", Encryption.hashString("password123", "0607989245678"))
 
-            Dim insertStudIntoUser As String = "INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_username, user_password) VALUES (3, 'Ognjen', 'Vujasinovic', 'ognjen.vujasinovic', 'pw1!');"
+            Dim insertStudIntoUser As String = String.Format("INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_jmbg, user_username, user_password) VALUES (3, 'Ognjen', 'Vujasinovic', '1234567891012', 'ognjen.vujasinovic', '{0}');", Encryption.hashString("password123", "1234567891012"))
 
             Using SqlConn As New SQLiteConnection(connectionString)
                 SqlConn.Open()
@@ -82,6 +94,9 @@ Public Class Database
 
                 Dim cmdScore As New SQLiteCommand(createScoreTable, SqlConn)
                 cmdScore.ExecuteNonQuery()
+
+                Dim cmdReg As New SQLiteCommand(createRegTable, SqlConn)
+                cmdReg.ExecuteNonQuery()
 
                 Dim cmdInsertUserType As New SQLiteCommand(insertIntoUserType, SqlConn)
                 cmdInsertUserType.ExecuteNonQuery()
@@ -104,14 +119,14 @@ Public Class Database
         Return System.IO.File.Exists(fullPath)
     End Function
 
-    Public Function isUserValid() As Boolean
-        Dim sql As String = "SELECT * FROM tbl_user WHERE user_type=@type AND user_username = @username AND user_password = @password"
+    Public Function isUserValid(table As String) As Boolean
+        Dim sql As String = String.Format("SELECT * FROM '{0}' WHERE user_type=@type AND user_username = @username AND user_password = @password AND user_jmbg='{1}'", table, Form1Login.TextBoxJmbg.Text)
         Dim isValid As Boolean = False
         Try
             Using conn As New SQLiteConnection(connectionString)
                 Using cmd As New SQLiteCommand(conn)
                     cmd.Parameters.AddWithValue("@username", Form1Login.TextBoxIme.Text)
-                    cmd.Parameters.AddWithValue("@password", Form1Login.TextBoxSifra.Text)
+                    cmd.Parameters.AddWithValue("@password", Encryption.hashString(Form1Login.TextBoxSifra.Text, Form1Login.TextBoxJmbg.Text))
                     If Form1Login.RadioButtonAdmin.Checked() Then
                         cmd.Parameters.AddWithValue("@type", 1)
                     End If
