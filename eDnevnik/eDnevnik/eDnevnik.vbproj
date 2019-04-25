@@ -115,6 +115,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database.vb" />
+    <Compile Include="Encryption.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +127,12 @@
       <DependentUpon>Form2Admin.vb</DependentUpon>
     </Compile>
     <Compile Include="Form2Admin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistracija.Designer.vb">
+      <DependentUpon>FormRegistracija.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistracija.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InboxAdmini.Designer.vb">
@@ -213,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2Admin.resx">
       <DependentUpon>Form2Admin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistracija.resx">
+      <DependentUpon>FormRegistracija.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InboxAdmini.resx">
       <DependentUpon>InboxAdmini.vb</DependentUpon>
