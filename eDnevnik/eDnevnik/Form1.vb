@@ -15,6 +15,17 @@ Public Class Form1Login
         TextBoxSifra.ForeColor = Color.Gray
     End Sub
 
+    Private Sub setDefaultTxtBoxJmbg()
+        TextBoxJmbg.Text = "Matični broj"
+        TextBoxJmbg.ForeColor = Color.Gray
+    End Sub
+
+    Private Sub setAllTxtDefault()
+        setDefaultTxtBoxIme()
+        setDefaultTxtBoxSifra()
+        setDefaultTxtBoxJmbg()
+    End Sub
+
     '-----------------------------
     Private Sub TextBoxIme_Enter(sender As Object, e As EventArgs) Handles TextBoxIme.Enter
         If (TextBoxIme.Text = "Korisničko ime") Then
@@ -44,6 +55,19 @@ Public Class Form1Login
             setDefaultTxtBoxSifra()
         End If
     End Sub
+
+    Private Sub TextBoxJmbg_Enter(sender As Object, e As EventArgs) Handles TextBoxJmbg.Enter
+        If (TextBoxJmbg.Text = "Matični broj") Then
+            TextBoxJmbg.Text = ""
+            TextBoxJmbg.ForeColor = Color.Black
+        End If
+    End Sub
+
+    Private Sub TextBoxJmbg_Leave(sender As Object, e As EventArgs) Handles TextBoxJmbg.Leave
+        If (TextBoxJmbg.Text = "") Then
+            setDefaultTxtBoxJmbg()
+        End If
+    End Sub
     ' ---------------------------------------
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -57,41 +81,35 @@ Public Class Form1Login
             MessageBox.Show("Odaberite tip računa!")
         Else
             If RadioButtonProfesor.Checked() Then
-                If Database.isUserValid() = True Then
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                If Database.isUserValid("tbl_user") = True Then
+                    setAllTxtDefault()
                     MessageBox.Show("Profesor ulogovan")
                 Else
                     MessageBox.Show("Profesor ne postoji!")
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                    setAllTxtDefault()
                 End If
             End If
 
             If RadioButtonUcenik.Checked() Then
-                If Database.isUserValid() = True Then
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                If Database.isUserValid("tbl_user") = True Then
+                    setAllTxtDefault()
                     MessageBox.Show("Učenik ulogovan")
                 Else
                     MessageBox.Show("Učenik ne postoji!")
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                    setAllTxtDefault()
                 End If
             End If
 
 
             If RadioButtonAdmin.Checked() Then
 
-                If Database.isUserValid() = True Then
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                If Database.isUserValid("tbl_user") = True Then
+                    setAllTxtDefault()
                     Me.Hide()
                     Form2Admin.Show()
                 Else
                     MessageBox.Show("Admin ne postoji!")
-                    setDefaultTxtBoxIme()
-                    setDefaultTxtBoxSifra()
+                    setAllTxtDefault()
                 End If
             End If
         End If
@@ -107,5 +125,11 @@ Public Class Form1Login
     Private Sub ButtonEye_MouseLeave(sender As Object, e As EventArgs) Handles ButtonEye.MouseLeave
 
         TextBoxSifra.UseSystemPasswordChar = True
+    End Sub
+
+    Private Sub ButtonRegistracija_Click(sender As Object, e As EventArgs) Handles ButtonRegistracija.Click
+        setAllTxtDefault()
+        Me.Hide()
+        FormRegistracija.Show()
     End Sub
 End Class

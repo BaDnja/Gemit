@@ -29,18 +29,19 @@ Partial Class Form1Login
         Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
+        Me.TextBoxJmbg = New System.Windows.Forms.TextBox()
+        Me.ButtonEye = New System.Windows.Forms.Button()
+        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
-        Me.ButtonEye = New System.Windows.Forms.Button()
-        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.ButtonRegistracija = New System.Windows.Forms.Button()
         Me.ButtonPrijava = New System.Windows.Forms.Button()
         Me.GroupBoxKorisnici.SuspendLayout()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadioButtonUcenik
@@ -68,10 +69,10 @@ Partial Class Form1Login
         'TextBoxIme
         '
         Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.TextBoxIme.Location = New System.Drawing.Point(173, 111)
+        Me.TextBoxIme.Location = New System.Drawing.Point(173, 86)
         Me.TextBoxIme.Name = "TextBoxIme"
         Me.TextBoxIme.Size = New System.Drawing.Size(142, 20)
-        Me.TextBoxIme.TabIndex = 5
+        Me.TextBoxIme.TabIndex = 101
         Me.TextBoxIme.Text = "Korisničko ime"
         '
         'TextBoxSifra
@@ -80,7 +81,7 @@ Partial Class Form1Login
         Me.TextBoxSifra.Location = New System.Drawing.Point(173, 146)
         Me.TextBoxSifra.Name = "TextBoxSifra"
         Me.TextBoxSifra.Size = New System.Drawing.Size(142, 20)
-        Me.TextBoxSifra.TabIndex = 7
+        Me.TextBoxSifra.TabIndex = 103
         Me.TextBoxSifra.Text = "Šifra"
         '
         'RadioButtonProfesor
@@ -110,6 +111,35 @@ Partial Class Form1Login
         Me.GroupBoxKorisnici.TabIndex = 12
         Me.GroupBoxKorisnici.TabStop = False
         '
+        'TextBoxJmbg
+        '
+        Me.TextBoxJmbg.ForeColor = System.Drawing.SystemColors.InactiveCaption
+        Me.TextBoxJmbg.Location = New System.Drawing.Point(173, 113)
+        Me.TextBoxJmbg.Name = "TextBoxJmbg"
+        Me.TextBoxJmbg.Size = New System.Drawing.Size(142, 20)
+        Me.TextBoxJmbg.TabIndex = 102
+        Me.TextBoxJmbg.Text = "Matični broj"
+        '
+        'ButtonEye
+        '
+        Me.ButtonEye.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ButtonEye.BackgroundImage = Global.eDnevnik.My.Resources.Resources.eye_32x32
+        Me.ButtonEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ButtonEye.Location = New System.Drawing.Point(321, 136)
+        Me.ButtonEye.Name = "ButtonEye"
+        Me.ButtonEye.Size = New System.Drawing.Size(38, 38)
+        Me.ButtonEye.TabIndex = 14
+        Me.ButtonEye.UseVisualStyleBackColor = False
+        '
+        'PictureBoxGemit
+        '
+        Me.PictureBoxGemit.Image = Global.eDnevnik.My.Resources.Resources.book_128x128
+        Me.PictureBoxGemit.Location = New System.Drawing.Point(385, 12)
+        Me.PictureBoxGemit.Name = "PictureBoxGemit"
+        Me.PictureBoxGemit.Size = New System.Drawing.Size(134, 130)
+        Me.PictureBoxGemit.TabIndex = 13
+        Me.PictureBoxGemit.TabStop = False
+        '
         'PictureBoxAdmin
         '
         Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
@@ -137,26 +167,6 @@ Partial Class Form1Login
         Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBoxProfesor.TabIndex = 8
         Me.PictureBoxProfesor.TabStop = False
-        '
-        'ButtonEye
-        '
-        Me.ButtonEye.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.ButtonEye.BackgroundImage = Global.eDnevnik.My.Resources.Resources.eye_32x32
-        Me.ButtonEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ButtonEye.Location = New System.Drawing.Point(321, 136)
-        Me.ButtonEye.Name = "ButtonEye"
-        Me.ButtonEye.Size = New System.Drawing.Size(38, 38)
-        Me.ButtonEye.TabIndex = 14
-        Me.ButtonEye.UseVisualStyleBackColor = False
-        '
-        'PictureBoxGemit
-        '
-        Me.PictureBoxGemit.Image = Global.eDnevnik.My.Resources.Resources.book_128x128
-        Me.PictureBoxGemit.Location = New System.Drawing.Point(385, 12)
-        Me.PictureBoxGemit.Name = "PictureBoxGemit"
-        Me.PictureBoxGemit.Size = New System.Drawing.Size(134, 130)
-        Me.PictureBoxGemit.TabIndex = 13
-        Me.PictureBoxGemit.TabStop = False
         '
         'ButtonRegistracija
         '
@@ -190,6 +200,7 @@ Partial Class Form1Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(525, 237)
+        Me.Controls.Add(Me.TextBoxJmbg)
         Me.Controls.Add(Me.ButtonEye)
         Me.Controls.Add(Me.PictureBoxGemit)
         Me.Controls.Add(Me.GroupBoxKorisnici)
@@ -208,10 +219,10 @@ Partial Class Form1Login
         Me.Text = "eDnevnik"
         Me.GroupBoxKorisnici.ResumeLayout(False)
         Me.GroupBoxKorisnici.PerformLayout()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +241,5 @@ Partial Class Form1Login
     Friend WithEvents GroupBoxKorisnici As GroupBox
     Friend WithEvents PictureBoxGemit As PictureBox
     Friend WithEvents ButtonEye As Button
+    Friend WithEvents TextBoxJmbg As TextBox
 End Class
