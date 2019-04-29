@@ -357,6 +357,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="book 32x32.ico" />
+    <None Include="Resources\email 128x128.png" />
+    <None Include="Resources\email 64x64.png" />
+    <None Include="Resources\email 32x32.png" />
     <None Include="Resources\eye 32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
