@@ -25,11 +25,8 @@ Partial Class FormRegistracija
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRegistracija))
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
-        Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.RadioButtonUcenik = New System.Windows.Forms.RadioButton()
-        Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.RadioButtonAdmin = New System.Windows.Forms.RadioButton()
-        Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
         Me.TextBoxIme = New System.Windows.Forms.TextBox()
         Me.TextBoxPrezime = New System.Windows.Forms.TextBox()
         Me.TextBoxJmbg = New System.Windows.Forms.TextBox()
@@ -40,14 +37,18 @@ Partial Class FormRegistracija
         Me.TextBoxDatum = New System.Windows.Forms.TextBox()
         Me.GroupBoxObavezna = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ButtonRegistracija = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ButtonNazad = New System.Windows.Forms.Button()
+        Me.ButtonRegistracija = New System.Windows.Forms.Button()
+        Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
         Me.GroupBoxKorisnici.SuspendLayout()
+        Me.GroupBoxObavezna.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBoxObavezna.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBoxKorisnici
@@ -78,15 +79,6 @@ Partial Class FormRegistracija
         Me.RadioButtonProfesor.Text = "Profesor"
         Me.RadioButtonProfesor.UseVisualStyleBackColor = True
         '
-        'PictureBoxAdmin
-        '
-        Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
-        Me.PictureBoxAdmin.Location = New System.Drawing.Point(82, 161)
-        Me.PictureBoxAdmin.Name = "PictureBoxAdmin"
-        Me.PictureBoxAdmin.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxAdmin.TabIndex = 11
-        Me.PictureBoxAdmin.TabStop = False
-        '
         'RadioButtonUcenik
         '
         Me.RadioButtonUcenik.AutoSize = True
@@ -98,15 +90,6 @@ Partial Class FormRegistracija
         Me.RadioButtonUcenik.Text = "Učenik"
         Me.RadioButtonUcenik.UseVisualStyleBackColor = True
         '
-        'PictureBoxUcenik
-        '
-        Me.PictureBoxUcenik.Image = Global.eDnevnik.My.Resources.Resources.student_32x321
-        Me.PictureBoxUcenik.Location = New System.Drawing.Point(82, 99)
-        Me.PictureBoxUcenik.Name = "PictureBoxUcenik"
-        Me.PictureBoxUcenik.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxUcenik.TabIndex = 10
-        Me.PictureBoxUcenik.TabStop = False
-        '
         'RadioButtonAdmin
         '
         Me.RadioButtonAdmin.AutoSize = True
@@ -117,16 +100,6 @@ Partial Class FormRegistracija
         Me.RadioButtonAdmin.TabStop = True
         Me.RadioButtonAdmin.Text = "Admin"
         Me.RadioButtonAdmin.UseVisualStyleBackColor = True
-        '
-        'PictureBoxProfesor
-        '
-        Me.PictureBoxProfesor.Image = Global.eDnevnik.My.Resources.Resources._32x32
-        Me.PictureBoxProfesor.Location = New System.Drawing.Point(82, 32)
-        Me.PictureBoxProfesor.Name = "PictureBoxProfesor"
-        Me.PictureBoxProfesor.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBoxProfesor.TabIndex = 8
-        Me.PictureBoxProfesor.TabStop = False
         '
         'TextBoxIme
         '
@@ -225,25 +198,25 @@ Partial Class FormRegistracija
         Me.GroupBox2.TabIndex = 23
         Me.GroupBox2.TabStop = False
         '
-        'ButtonRegistracija
+        'Button1
         '
-        Me.ButtonRegistracija.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRegistracija.Image = Global.eDnevnik.My.Resources.Resources.registration_32x32
-        Me.ButtonRegistracija.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonRegistracija.Location = New System.Drawing.Point(288, 255)
-        Me.ButtonRegistracija.Name = "ButtonRegistracija"
-        Me.ButtonRegistracija.Size = New System.Drawing.Size(157, 58)
-        Me.ButtonRegistracija.TabIndex = 24
-        Me.ButtonRegistracija.Text = "Pošalji zahtjev!"
-        Me.ButtonRegistracija.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonRegistracija.UseVisualStyleBackColor = True
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = Global.eDnevnik.My.Resources.Resources.email_32x32
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(291, 295)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 60)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Kontaktiraj nas putem e-maila"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ButtonNazad
         '
         Me.ButtonNazad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonNazad.Image = Global.eDnevnik.My.Resources.Resources.back_32x32
         Me.ButtonNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonNazad.Location = New System.Drawing.Point(361, 349)
+        Me.ButtonNazad.Location = New System.Drawing.Point(367, 361)
         Me.ButtonNazad.Name = "ButtonNazad"
         Me.ButtonNazad.Size = New System.Drawing.Size(84, 36)
         Me.ButtonNazad.TabIndex = 25
@@ -251,12 +224,54 @@ Partial Class FormRegistracija
         Me.ButtonNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonNazad.UseVisualStyleBackColor = True
         '
+        'ButtonRegistracija
+        '
+        Me.ButtonRegistracija.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRegistracija.Image = Global.eDnevnik.My.Resources.Resources.registration_32x32
+        Me.ButtonRegistracija.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonRegistracija.Location = New System.Drawing.Point(291, 230)
+        Me.ButtonRegistracija.Name = "ButtonRegistracija"
+        Me.ButtonRegistracija.Size = New System.Drawing.Size(157, 58)
+        Me.ButtonRegistracija.TabIndex = 24
+        Me.ButtonRegistracija.Text = "Pošalji zahtjev!"
+        Me.ButtonRegistracija.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonRegistracija.UseVisualStyleBackColor = True
+        '
+        'PictureBoxAdmin
+        '
+        Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
+        Me.PictureBoxAdmin.Location = New System.Drawing.Point(82, 161)
+        Me.PictureBoxAdmin.Name = "PictureBoxAdmin"
+        Me.PictureBoxAdmin.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxAdmin.TabIndex = 11
+        Me.PictureBoxAdmin.TabStop = False
+        '
+        'PictureBoxUcenik
+        '
+        Me.PictureBoxUcenik.Image = Global.eDnevnik.My.Resources.Resources.student_32x321
+        Me.PictureBoxUcenik.Location = New System.Drawing.Point(82, 99)
+        Me.PictureBoxUcenik.Name = "PictureBoxUcenik"
+        Me.PictureBoxUcenik.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxUcenik.TabIndex = 10
+        Me.PictureBoxUcenik.TabStop = False
+        '
+        'PictureBoxProfesor
+        '
+        Me.PictureBoxProfesor.Image = Global.eDnevnik.My.Resources.Resources._32x32
+        Me.PictureBoxProfesor.Location = New System.Drawing.Point(82, 32)
+        Me.PictureBoxProfesor.Name = "PictureBoxProfesor"
+        Me.PictureBoxProfesor.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBoxProfesor.TabIndex = 8
+        Me.PictureBoxProfesor.TabStop = False
+        '
         'FormRegistracija
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.ClientSize = New System.Drawing.Size(460, 397)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ButtonNazad)
         Me.Controls.Add(Me.ButtonRegistracija)
         Me.Controls.Add(Me.GroupBox2)
@@ -269,16 +284,16 @@ Partial Class FormRegistracija
         Me.MinimumSize = New System.Drawing.Size(480, 440)
         Me.Name = "FormRegistracija"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormRegistracija"
+        Me.Text = "Registracija"
         Me.GroupBoxKorisnici.ResumeLayout(False)
         Me.GroupBoxKorisnici.PerformLayout()
-        CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxObavezna.ResumeLayout(False)
         Me.GroupBoxObavezna.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -302,4 +317,5 @@ Partial Class FormRegistracija
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ButtonRegistracija As Button
     Friend WithEvents ButtonNazad As Button
+    Friend WithEvents Button1 As Button
 End Class
