@@ -78,41 +78,29 @@ Public Class Database
 
             Dim insertStudIntoUser As String = String.Format("INSERT INTO tbl_user (user_type, user_first_name, user_last_name, user_jmbg, user_username, user_password) VALUES (3, 'Ognjen', 'Vujasinovic', '1234567891012', 'ognjen.vujasinovic', '{0}');", Encryption.hashString("password123", "1234567891012"))
 
-            Using SqlConn As New SQLiteConnection(connectionString)
-                SqlConn.Open()
-                Dim cmdUserType As New SQLiteCommand(createUserTypeTable, SqlConn)
-                cmdUserType.ExecuteNonQuery()
+            execute(createUserTypeTable)
+            execute(createUserTable)
+            execute(createStudentInfoTable)
+            execute(createSubjectTable)
+            execute(createScoreTable)
+            execute(createRegTable)
+            execute(insertIntoUserType)
+            execute(insertAdminIntoUser)
+            execute(insertProfIntoUser)
+            execute(insertStudIntoUser)
 
-                Dim cmdUser As New SQLiteCommand(createUserTable, SqlConn)
-                cmdUser.ExecuteNonQuery()
-
-                Dim cmdStudentInfo As New SQLiteCommand(createStudentInfoTable, SqlConn)
-                cmdStudentInfo.ExecuteNonQuery()
-
-                Dim cmdSubject As New SQLiteCommand(createSubjectTable, SqlConn)
-                cmdSubject.ExecuteNonQuery()
-
-                Dim cmdScore As New SQLiteCommand(createScoreTable, SqlConn)
-                cmdScore.ExecuteNonQuery()
-
-                Dim cmdReg As New SQLiteCommand(createRegTable, SqlConn)
-                cmdReg.ExecuteNonQuery()
-
-                Dim cmdInsertUserType As New SQLiteCommand(insertIntoUserType, SqlConn)
-                cmdInsertUserType.ExecuteNonQuery()
-
-                Dim cmdInsertAdminUser As New SQLiteCommand(insertAdminIntoUser, SqlConn)
-                cmdInsertAdminUser.ExecuteNonQuery()
-
-                Dim cmdInsertProfUser As New SQLiteCommand(insertProfIntoUser, SqlConn)
-                cmdInsertProfUser.ExecuteNonQuery()
-
-                Dim cmdInserStudUser As New SQLiteCommand(insertStudIntoUser, SqlConn)
-                cmdInserStudUser.ExecuteNonQuery()
-
-                SqlConn.Close()
-            End Using
         End If
+    End Sub
+
+    ' Sub for creating tables and inserting data into tables
+    Public Sub execute(command As String)
+        Using SqlConn As New SQLiteConnection(connectionString)
+            SqlConn.Open()
+            Dim cmd As New SQLiteCommand(command, SqlConn)
+            cmd.ExecuteNonQuery()
+            SqlConn.Close()
+        End Using
+
     End Sub
 
     Public Function duplicateDatabase(fullPath As String) As Boolean
