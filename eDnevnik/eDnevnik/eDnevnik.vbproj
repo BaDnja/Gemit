@@ -186,6 +186,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Send Email.Designer.vb">
+      <DependentUpon>Send Email.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Send Email.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SpremanjeAdmina.Designer.vb">
       <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
     </Compile>
@@ -247,6 +253,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Send Email.resx">
+      <DependentUpon>Send Email.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpremanjeAdmina.resx">
       <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
