@@ -63,12 +63,12 @@ Public Class Database
                                             reg_type_id INTEGER NOT NULL,
                                             reg_first_name TEXT NOT NULL,
                                             reg_last_name TEXT NOT NULL,
-                                            reg_jmbg TEXT NULL UNIQUE NOT NULL,
-                                            reg_username TEXT NOT NULL UNIQUE,
-                                            reg_password TEXT NOT NULL,
                                             reg_parent_name TEXT NULL,
+                                            reg_jmbg TEXT NULL UNIQUE NOT NULL,
                                             reg_address TEXT NULL,
-                                            reg_birthdate TEXT NULL);"
+                                            reg_birthdate TEXT NULL,
+                                            reg_username TEXT NOT NULL UNIQUE,
+                                            reg_password TEXT NOT NULL);"
 
             Dim insertIntoUserType As String = "INSERT INTO tbl_user_type (type_name) VALUES ('Administrator'), ('Professor'), ('Student');"
 

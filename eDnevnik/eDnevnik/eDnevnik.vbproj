@@ -96,24 +96,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrisanjeAdmina.Designer.vb">
-      <DependentUpon>BrisanjeAdmina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BrisanjeAdmina.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BrisanjeProfesora.Designer.vb">
-      <DependentUpon>BrisanjeProfesora.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BrisanjeProfesora.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BrisanjeUcenika.Designer.vb">
-      <DependentUpon>BrisanjeUcenika.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BrisanjeUcenika.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Database.vb" />
     <Compile Include="Encryption.vb" />
     <Compile Include="Form1.vb">
@@ -133,42 +115,6 @@
       <DependentUpon>FormRegistracija.vb</DependentUpon>
     </Compile>
     <Compile Include="FormRegistracija.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InboxAdmini.Designer.vb">
-      <DependentUpon>InboxAdmini.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InboxAdmini.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InboxProfesori.Designer.vb">
-      <DependentUpon>InboxProfesori.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InboxProfesori.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InboxUcenici.Designer.vb">
-      <DependentUpon>InboxUcenici.vb</DependentUpon>
-    </Compile>
-    <Compile Include="InboxUcenici.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IzmjenaAdmina.Designer.vb">
-      <DependentUpon>IzmjenaAdmina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="IzmjenaAdmina.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IzmjenaProfesora.Designer.vb">
-      <DependentUpon>IzmjenaProfesora.vb</DependentUpon>
-    </Compile>
-    <Compile Include="IzmjenaProfesora.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IzmjenaUcenika.Designer.vb">
-      <DependentUpon>IzmjenaUcenika.vb</DependentUpon>
-    </Compile>
-    <Compile Include="IzmjenaUcenika.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -192,35 +138,8 @@
     <Compile Include="Send Email.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpremanjeAdmina.Designer.vb">
-      <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SpremanjeAdmina.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SpremanjeProfesora.Designer.vb">
-      <DependentUpon>SpremanjeProfesora.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SpremanjeProfesora.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SpremanjeUcenika.Designer.vb">
-      <DependentUpon>SpremanjeUcenika.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SpremanjeUcenika.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BrisanjeAdmina.resx">
-      <DependentUpon>BrisanjeAdmina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BrisanjeProfesora.resx">
-      <DependentUpon>BrisanjeProfesora.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BrisanjeUcenika.resx">
-      <DependentUpon>BrisanjeUcenika.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -230,24 +149,6 @@
     <EmbeddedResource Include="FormRegistracija.resx">
       <DependentUpon>FormRegistracija.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InboxAdmini.resx">
-      <DependentUpon>InboxAdmini.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InboxProfesori.resx">
-      <DependentUpon>InboxProfesori.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InboxUcenici.resx">
-      <DependentUpon>InboxUcenici.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IzmjenaAdmina.resx">
-      <DependentUpon>IzmjenaAdmina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IzmjenaProfesora.resx">
-      <DependentUpon>IzmjenaProfesora.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IzmjenaUcenika.resx">
-      <DependentUpon>IzmjenaUcenika.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -256,15 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Send Email.resx">
       <DependentUpon>Send Email.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SpremanjeAdmina.resx">
-      <DependentUpon>SpremanjeAdmina.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SpremanjeProfesora.resx">
-      <DependentUpon>SpremanjeProfesora.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SpremanjeUcenika.resx">
-      <DependentUpon>SpremanjeUcenika.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -366,6 +258,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="book 32x32.ico" />
+    <None Include="Resources\user 32x32.png" />
+    <None Include="Resources\decline 32x32.png" />
+    <None Include="Resources\accept 32x32.png" />
+    <None Include="Resources\refresh 32x32.png" />
+    <None Include="Resources\search 32x32.png" />
+    <None Include="Resources\update 32x32.png" />
     <None Include="Resources\email 128x128.png" />
     <None Include="Resources\email 64x64.png" />
     <None Include="Resources\email 32x32.png" />
