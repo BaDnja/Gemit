@@ -20,7 +20,7 @@ Public Class Form1Login
         TextBoxJmbg.ForeColor = Color.Gray
     End Sub
 
-    Private Sub setAllTxtDefault()
+    Public Sub setAllTxtDefault()
         setDefaultTxtBoxIme()
         setDefaultTxtBoxSifra()
         setDefaultTxtBoxJmbg()
@@ -75,46 +75,76 @@ Public Class Form1Login
         ButtonEye.Hide()
     End Sub
 
+    Public Sub setStudentID()
+        Dim conn As New SQLiteConnection(Database.connectionString)
+        Dim sql As String = String.Format("SELECT user_id FROM tbl_user where user_jmbg={0}", TextBoxJmbg.Text)
+        Dim da As New SQLiteDataAdapter(sql, conn)
+        Dim dt As New DataTable
+
+        Try
+            conn.Open()
+            da.Fill(dt)
+            lblId.DataBindings.Add("Text", dt, "user_id")
+            lblId.Hide()
+            Profil.m_student_id = lblId.Text
+        Catch ex As Exception
+            conn.Dispose()
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
+    End Sub
+
     Private Sub ButtonPrijava_Click(sender As Object, e As EventArgs) Handles ButtonPrijava.Click
 
         If RadioButtonProfesor.Checked = False And RadioButtonUcenik.Checked = False And RadioButtonAdmin.Checked = False Then
             MessageBox.Show("Odaberite tip računa!")
         Else
-            If RadioButtonProfesor.Checked() Then
-                If Database.isUserValid("tbl_user") = True Then
-                    setAllTxtDefault()
-                    MessageBox.Show("Profesor ulogovan")
-                Else
-                    MessageBox.Show("Profesor ne postoji!")
-                    setAllTxtDefault()
+            If TextBoxJmbg.Text.Length <> 13 Then
+                MessageBox.Show("Dužina Matičnog broja nije ispravna!")
+                TextBoxJmbg.Clear()
+                TextBoxSifra.Clear()
+            Else
+                If RadioButtonProfesor.Checked() Then
+                    If Database.isUserValid("tbl_user") = True Then
+                        MessageBox.Show("Profesor ulogovan")
+                        Me.Hide()
+                        Profil.Show()
+                    Else
+                        MessageBox.Show("Profesor ne postoji!")
+                        setAllTxtDefault()
+                    End If
                 End If
-            End If
 
-            If RadioButtonUcenik.Checked() Then
-                If Database.isUserValid("tbl_user") = True Then
-                    setAllTxtDefault()
-                    MessageBox.Show("Učenik ulogovan")
-                Else
-                    MessageBox.Show("Učenik ne postoji!")
-                    setAllTxtDefault()
+                If RadioButtonUcenik.Checked() Then
+                    If Database.isUserValid("tbl_user") = True Then
+                        setStudentID()
+                        MessageBox.Show("Učenik ulogovan!")
+                        Me.Hide()
+                        If Profil.checkIfStudentInfoExist() = False Then
+                            Upit.Show()
+                        Else
+                            Profil.Show()
+                        End If
+
+                    Else
+                        MessageBox.Show("Učenik ne postoji!")
+                        setAllTxtDefault()
+                    End If
                 End If
-            End If
 
+                If RadioButtonAdmin.Checked() Then
 
-            If RadioButtonAdmin.Checked() Then
-
-                If Database.isUserValid("tbl_user") = True Then
-                    setAllTxtDefault()
-                    Me.Hide()
-                    Form2Admin.Show()
-                Else
-                    MessageBox.Show("Admin ne postoji!")
-                    setAllTxtDefault()
+                    If Database.isUserValid("tbl_user") = True Then
+                        Me.Hide()
+                        'Form2Admin.Show()
+                        Profil.Show()
+                    Else
+                        MessageBox.Show("Admin ne postoji!")
+                        setAllTxtDefault()
+                    End If
                 End If
             End If
         End If
-
-
     End Sub
 
     Private Sub ButtonEye_MouseEnter(sender As Object, e As EventArgs) Handles ButtonEye.MouseEnter

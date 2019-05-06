@@ -281,6 +281,8 @@ Public Class FormRegistracija
         Dim sqlCommand As String = String.Format("INSERT INTO tbl_registration (reg_type_id, reg_first_name, reg_last_name, reg_jmbg, reg_username, reg_password, reg_parent_name, reg_address, reg_birthdate) VALUES ({0},'{1}', '{2}', {3}, 
                                                             '{4}', '{5}', '{6}', '{7}', '{8}')", type, TextBoxIme.Text, TextBoxPrezime.Text, TextBoxJmbg.Text, TextBoxKorIme.Text, password, ParentName, Address, BDate)
 
+
+
         If isAccountTypeValid() = False Then
             MessageBox.Show("Odaberite tip računa!")
         Else
@@ -293,8 +295,8 @@ Public Class FormRegistracija
                 If jmbgReg = True Then
                     MessageBox.Show("Već ste poslali zahtjev, pričekajte odobrenje!")
                 Else
-                    If jmbgValid = False Then
-                        MessageBox.Show("Ispravno unesite matični broj!")
+                    If jmbgValid = False Or TextBoxJmbg.Text.Length <> 13 Then
+                        MessageBox.Show("Ispravno unesite matični broj! Provjerite dužinu broja!")
                     Else
                         If UsernameValid = False Then
                             MessageBox.Show("Ispravno unesite korisničko ime!")
@@ -319,8 +321,8 @@ Public Class FormRegistracija
     End Function
 
     Private Sub ButtonRegistracija_Click(sender As Object, e As EventArgs) Handles ButtonRegistracija.Click
-
         If isValidRegistration() = True Then
+
             MessageBox.Show("Uspješna registacija. Molimo pričekajte odobrenje administratora!")
             setAllTxtDefault()
         End If
