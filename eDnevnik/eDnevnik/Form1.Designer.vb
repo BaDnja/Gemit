@@ -29,19 +29,20 @@ Partial Class Form1Login
         Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
-        Me.TextBoxJmbg = New System.Windows.Forms.TextBox()
-        Me.ButtonEye = New System.Windows.Forms.Button()
-        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
+        Me.TextBoxJmbg = New System.Windows.Forms.TextBox()
+        Me.ButtonEye = New System.Windows.Forms.Button()
+        Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.ButtonRegistracija = New System.Windows.Forms.Button()
         Me.ButtonPrijava = New System.Windows.Forms.Button()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.GroupBoxKorisnici.SuspendLayout()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadioButtonUcenik
@@ -99,6 +100,7 @@ Partial Class Form1Login
         '
         'GroupBoxKorisnici
         '
+        Me.GroupBoxKorisnici.Controls.Add(Me.lblId)
         Me.GroupBoxKorisnici.Controls.Add(Me.RadioButtonProfesor)
         Me.GroupBoxKorisnici.Controls.Add(Me.PictureBoxAdmin)
         Me.GroupBoxKorisnici.Controls.Add(Me.RadioButtonUcenik)
@@ -110,6 +112,34 @@ Partial Class Form1Login
         Me.GroupBoxKorisnici.Size = New System.Drawing.Size(139, 212)
         Me.GroupBoxKorisnici.TabIndex = 12
         Me.GroupBoxKorisnici.TabStop = False
+        '
+        'PictureBoxAdmin
+        '
+        Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
+        Me.PictureBoxAdmin.Location = New System.Drawing.Point(82, 161)
+        Me.PictureBoxAdmin.Name = "PictureBoxAdmin"
+        Me.PictureBoxAdmin.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxAdmin.TabIndex = 11
+        Me.PictureBoxAdmin.TabStop = False
+        '
+        'PictureBoxUcenik
+        '
+        Me.PictureBoxUcenik.Image = Global.eDnevnik.My.Resources.Resources.student_32x321
+        Me.PictureBoxUcenik.Location = New System.Drawing.Point(82, 99)
+        Me.PictureBoxUcenik.Name = "PictureBoxUcenik"
+        Me.PictureBoxUcenik.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxUcenik.TabIndex = 10
+        Me.PictureBoxUcenik.TabStop = False
+        '
+        'PictureBoxProfesor
+        '
+        Me.PictureBoxProfesor.Image = Global.eDnevnik.My.Resources.Resources._32x32
+        Me.PictureBoxProfesor.Location = New System.Drawing.Point(82, 32)
+        Me.PictureBoxProfesor.Name = "PictureBoxProfesor"
+        Me.PictureBoxProfesor.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBoxProfesor.TabIndex = 8
+        Me.PictureBoxProfesor.TabStop = False
         '
         'TextBoxJmbg
         '
@@ -140,34 +170,6 @@ Partial Class Form1Login
         Me.PictureBoxGemit.TabIndex = 13
         Me.PictureBoxGemit.TabStop = False
         '
-        'PictureBoxAdmin
-        '
-        Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
-        Me.PictureBoxAdmin.Location = New System.Drawing.Point(82, 161)
-        Me.PictureBoxAdmin.Name = "PictureBoxAdmin"
-        Me.PictureBoxAdmin.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxAdmin.TabIndex = 11
-        Me.PictureBoxAdmin.TabStop = False
-        '
-        'PictureBoxUcenik
-        '
-        Me.PictureBoxUcenik.Image = Global.eDnevnik.My.Resources.Resources.student_32x321
-        Me.PictureBoxUcenik.Location = New System.Drawing.Point(82, 99)
-        Me.PictureBoxUcenik.Name = "PictureBoxUcenik"
-        Me.PictureBoxUcenik.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxUcenik.TabIndex = 10
-        Me.PictureBoxUcenik.TabStop = False
-        '
-        'PictureBoxProfesor
-        '
-        Me.PictureBoxProfesor.Image = Global.eDnevnik.My.Resources.Resources._32x32
-        Me.PictureBoxProfesor.Location = New System.Drawing.Point(82, 32)
-        Me.PictureBoxProfesor.Name = "PictureBoxProfesor"
-        Me.PictureBoxProfesor.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBoxProfesor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBoxProfesor.TabIndex = 8
-        Me.PictureBoxProfesor.TabStop = False
-        '
         'ButtonRegistracija
         '
         Me.ButtonRegistracija.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -194,6 +196,14 @@ Partial Class Form1Login
         Me.ButtonPrijava.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonPrijava.UseVisualStyleBackColor = True
         '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Location = New System.Drawing.Point(69, 100)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(0, 13)
+        Me.lblId.TabIndex = 12
+        '
         'Form1Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -219,10 +229,10 @@ Partial Class Form1Login
         Me.Text = "eDnevnik"
         Me.GroupBoxKorisnici.ResumeLayout(False)
         Me.GroupBoxKorisnici.PerformLayout()
-        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxProfesor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxGemit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -242,4 +252,5 @@ Partial Class Form1Login
     Friend WithEvents PictureBoxGemit As PictureBox
     Friend WithEvents ButtonEye As Button
     Friend WithEvents TextBoxJmbg As TextBox
+    Friend WithEvents lblId As Label
 End Class

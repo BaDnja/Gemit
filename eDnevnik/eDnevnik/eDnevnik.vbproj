@@ -97,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.vb" />
+    <Compile Include="Dnevnik.Designer.vb">
+      <DependentUpon>Dnevnik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dnevnik.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Encryption.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -117,6 +123,12 @@
     <Compile Include="FormRegistracija.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IzmjenaSifre.Designer.vb">
+      <DependentUpon>IzmjenaSifre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaSifre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -132,22 +144,49 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="FormProfil.Designer.vb">
+      <DependentUpon>FormProfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ocjene.Designer.vb">
+      <DependentUpon>Ocjene.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ocjene.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Send Email.Designer.vb">
       <DependentUpon>Send Email.vb</DependentUpon>
     </Compile>
     <Compile Include="Send Email.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Upit.Designer.vb">
+      <DependentUpon>Upit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Upit.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dnevnik.resx">
+      <DependentUpon>Dnevnik.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2Admin.resx">
       <DependentUpon>Form2Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProfil.resx">
+      <DependentUpon>FormProfil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRegistracija.resx">
       <DependentUpon>FormRegistracija.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaSifre.resx">
+      <DependentUpon>IzmjenaSifre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -155,8 +194,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ocjene.resx">
+      <DependentUpon>Ocjene.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Send Email.resx">
       <DependentUpon>Send Email.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upit.resx">
+      <DependentUpon>Upit.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -258,6 +303,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="book 32x32.ico" />
+    <None Include="Resources\teacher 128x128.png" />
+    <None Include="Resources\admin 128x128.png" />
+    <None Include="Resources\password 32x32.png" />
     <None Include="Resources\user 32x32.png" />
     <None Include="Resources\decline 32x32.png" />
     <None Include="Resources\accept 32x32.png" />
