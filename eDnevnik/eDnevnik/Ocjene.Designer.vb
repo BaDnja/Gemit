@@ -1,0 +1,54 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Ocjene
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.btnNazad = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'btnNazad
+        '
+        Me.btnNazad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNazad.Image = Global.eDnevnik.My.Resources.Resources.back_32x32
+        Me.btnNazad.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNazad.Location = New System.Drawing.Point(484, 339)
+        Me.btnNazad.Name = "btnNazad"
+        Me.btnNazad.Size = New System.Drawing.Size(84, 36)
+        Me.btnNazad.TabIndex = 49
+        Me.btnNazad.Text = "Nazad"
+        Me.btnNazad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNazad.UseVisualStyleBackColor = True
+        '
+        'Ocjene
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(580, 387)
+        Me.Controls.Add(Me.btnNazad)
+        Me.Name = "Ocjene"
+        Me.Text = "Ocjene"
+        Me.ResumeLayout(False)
+
+    End Sub
+
+    Friend WithEvents btnNazad As Button
+End Class
