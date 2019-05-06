@@ -1,8 +1,8 @@
 ﻿Public Class Encryption
     Private cryptoServiceProvider As System.Security.Cryptography.RNGCryptoServiceProvider
 
-    Public Shared Function hashString(str1 As String, str2 As String) As String
-        Dim str = str1 + str2
+    Public Shared Function hashString(password As String, jmbg As String) As String
+        Dim str = password + jmbg
         Return encryptString(str)
     End Function
 
