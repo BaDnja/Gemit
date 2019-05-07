@@ -168,6 +168,12 @@
     <Compile Include="Upit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpitProfesor.Designer.vb">
+      <DependentUpon>UpitProfesor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpitProfesor.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dnevnik.resx">
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Upit.resx">
       <DependentUpon>Upit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpitProfesor.resx">
+      <DependentUpon>UpitProfesor.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
