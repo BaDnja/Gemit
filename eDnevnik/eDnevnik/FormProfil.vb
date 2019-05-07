@@ -4,7 +4,7 @@ Public Class Profil
     Dim database As New Database
     Dim upit As New Upit
     Dim conn As String = database.connectionString
-    Public m_student_id As String
+    Public m_user_id As String
     Public m_year As String
     Public m_class As String
 
@@ -26,10 +26,13 @@ Public Class Profil
         txtDatumR.Clear()
     End Sub
 
-    Public Function checkIfStudentInfoExist() As Boolean
+    Public Function checkUserInfo(table As String, id As String) As Boolean
+        ' Function that will check if professor choosed subject
+        ' In other case, it checks if student info exists
+        ' Depends on arguments provided.
         Dim value As Boolean = False
         Dim conn As New SQLiteConnection(database.connectionString)
-        Dim query As String = String.Format("SELECT * FROM tbl_student_info WHERE student_id={0}", m_student_id)
+        Dim query As String = String.Format("SELECT * FROM {0} WHERE {1}='{2}';", table, id, m_user_id)
         Dim da As New SQLiteDataAdapter(query, conn)
         Dim dt As New DataTable
 
@@ -43,16 +46,16 @@ Public Class Profil
             End If
         Catch ex As Exception
             conn.Dispose()
-            MsgBox("1" + ex.Message)
+            MsgBox("1: " + ex.Message)
             Exit Function
         End Try
         Return value
     End Function
 
     Private Sub insertStudentInfo()
-        If checkIfStudentInfoExist() = False Then
+        If checkUserInfo("tbl_student_info", "student_id") = False Then
             Try
-                Dim sql As String = String.Format("INSERT INTO tbl_student_info (student_id, year, class) VALUES ({0}, {1}, '{2}')", m_student_id, m_year, m_class)
+                Dim sql As String = String.Format("INSERT INTO tbl_student_info (student_id, year, class) VALUES ({0}, {1}, '{2}')", m_user_id, m_year, m_class)
                 executeNonQuery(sql)
                 'MsgBox(sql)
             Catch ex As Exception
@@ -121,7 +124,7 @@ Public Class Profil
         If getTypeinfo() = 3 Then
             GroupBoxStud.Show()
             insertStudentInfo()
-            Dim query1 As String = String.Format("SELECT * FROM tbl_student_info WHERE student_id={0}", m_student_id)
+            Dim query1 As String = String.Format("SELECT * FROM tbl_student_info WHERE student_id={0}", m_user_id)
             Dim da1 As New SQLiteDataAdapter(query1, conn)
             Dim dt1 As New DataTable
 
@@ -149,7 +152,7 @@ Public Class Profil
     End Sub
 
     ' execute non query
-    Private Function executeNonQuery(command As String) As Boolean
+    Public Function executeNonQuery(command As String) As Boolean
         Dim value As Boolean = False
         Using SqlConn As New SQLiteConnection(conn)
             Try
@@ -172,7 +175,7 @@ Public Class Profil
                             txtIme.Text, txtPrezime.Text, txtRod.Text, txtAdresa.Text, txtDatumR.Text, txtJmbg.Text)
 
         Dim sql2 As String = String.Format("UPDATE tbl_student_info SET year='{0}', class='{1}' WHERE student_id='{2}'",
-                                            txtYear.Text, txtClass.Text, m_student_id)
+                                            txtYear.Text, txtClass.Text, m_user_id)
 
         Dim execute As Boolean = executeNonQuery(sql)
         Dim execute2 As Boolean = executeNonQuery(sql2)
@@ -224,7 +227,7 @@ Public Class Profil
             Me.Hide()
             Dnevnik.Show()
         ElseIf getTypeinfo() = 3 Then
-            MessageBox.Show("Ocjene")
+            Ocjene.Show()
         End If
     End Sub
 

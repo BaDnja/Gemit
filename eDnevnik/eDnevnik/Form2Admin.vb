@@ -16,7 +16,7 @@ Public Class Form2Admin
     End Sub
 
     ' fill data adapter
-    Private Sub daFill(ByVal query As String, ByVal tbl As DataTable)
+    Public Sub daFill(ByVal query As String, ByVal tbl As DataTable)
         Dim connection As New SQLiteConnection(conn)
         Dim da As New SQLiteDataAdapter(query, connection)
         da.Fill(tbl)

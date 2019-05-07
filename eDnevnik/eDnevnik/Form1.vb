@@ -75,9 +75,9 @@ Public Class Form1Login
         ButtonEye.Hide()
     End Sub
 
-    Public Sub setStudentID()
+    Private Sub setUserID()
         Dim conn As New SQLiteConnection(Database.connectionString)
-        Dim sql As String = String.Format("SELECT user_id FROM tbl_user where user_jmbg={0}", TextBoxJmbg.Text)
+        Dim sql As String = String.Format("SELECT user_id FROM tbl_user where user_jmbg='{0}'", TextBoxJmbg.Text)
         Dim da As New SQLiteDataAdapter(sql, conn)
         Dim dt As New DataTable
 
@@ -86,7 +86,7 @@ Public Class Form1Login
             da.Fill(dt)
             lblId.DataBindings.Add("Text", dt, "user_id")
             lblId.Hide()
-            Profil.m_student_id = lblId.Text
+            Profil.m_user_id = lblId.Text
         Catch ex As Exception
             conn.Dispose()
             MsgBox(ex.Message)
@@ -106,9 +106,14 @@ Public Class Form1Login
             Else
                 If RadioButtonProfesor.Checked() Then
                     If Database.isUserValid("tbl_user") = True Then
+                        setUserID()
                         MessageBox.Show("Profesor ulogovan")
                         Me.Hide()
-                        Profil.Show()
+                        If Profil.checkUserInfo("tbl_subject", "user_id") = False Then
+                            UpitProfesor.Show()
+                        Else
+                            Profil.Show()
+                        End If
                     Else
                         MessageBox.Show("Profesor ne postoji!")
                         setAllTxtDefault()
@@ -117,10 +122,10 @@ Public Class Form1Login
 
                 If RadioButtonUcenik.Checked() Then
                     If Database.isUserValid("tbl_user") = True Then
-                        setStudentID()
+                        setUserID()
                         MessageBox.Show("Učenik ulogovan!")
                         Me.Hide()
-                        If Profil.checkIfStudentInfoExist() = False Then
+                        If Profil.checkUserInfo("tbl_student_info", "student_id") = False Then
                             Upit.Show()
                         Else
                             Profil.Show()

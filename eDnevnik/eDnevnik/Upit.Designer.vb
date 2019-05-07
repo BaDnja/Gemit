@@ -128,6 +128,7 @@ Partial Class Upit
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Upit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Upit"
         Me.ResumeLayout(False)
         Me.PerformLayout()
