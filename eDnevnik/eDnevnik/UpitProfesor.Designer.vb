@@ -118,8 +118,11 @@ Partial Class UpitProfesor
         Me.Controls.Add(Me.txtSubject)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(410, 452)
+        Me.MinimumSize = New System.Drawing.Size(410, 452)
         Me.Name = "UpitProfesor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Upit Profesora"
