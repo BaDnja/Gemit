@@ -29,6 +29,7 @@ Partial Class Form1Login
         Me.TextBoxSifra = New System.Windows.Forms.TextBox()
         Me.RadioButtonProfesor = New System.Windows.Forms.RadioButton()
         Me.GroupBoxKorisnici = New System.Windows.Forms.GroupBox()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.PictureBoxAdmin = New System.Windows.Forms.PictureBox()
         Me.PictureBoxUcenik = New System.Windows.Forms.PictureBox()
         Me.PictureBoxProfesor = New System.Windows.Forms.PictureBox()
@@ -37,7 +38,6 @@ Partial Class Form1Login
         Me.PictureBoxGemit = New System.Windows.Forms.PictureBox()
         Me.ButtonRegistracija = New System.Windows.Forms.Button()
         Me.ButtonPrijava = New System.Windows.Forms.Button()
-        Me.lblId = New System.Windows.Forms.Label()
         Me.GroupBoxKorisnici.SuspendLayout()
         CType(Me.PictureBoxAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxUcenik, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +69,7 @@ Partial Class Form1Login
         '
         'TextBoxIme
         '
+        Me.TextBoxIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxIme.Location = New System.Drawing.Point(173, 86)
         Me.TextBoxIme.Name = "TextBoxIme"
@@ -78,6 +79,7 @@ Partial Class Form1Login
         '
         'TextBoxSifra
         '
+        Me.TextBoxSifra.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxSifra.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxSifra.Location = New System.Drawing.Point(173, 146)
         Me.TextBoxSifra.Name = "TextBoxSifra"
@@ -113,6 +115,14 @@ Partial Class Form1Login
         Me.GroupBoxKorisnici.TabIndex = 12
         Me.GroupBoxKorisnici.TabStop = False
         '
+        'lblId
+        '
+        Me.lblId.AutoSize = True
+        Me.lblId.Location = New System.Drawing.Point(69, 100)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(0, 13)
+        Me.lblId.TabIndex = 12
+        '
         'PictureBoxAdmin
         '
         Me.PictureBoxAdmin.Image = Global.eDnevnik.My.Resources.Resources.administrator_32x32
@@ -143,6 +153,7 @@ Partial Class Form1Login
         '
         'TextBoxJmbg
         '
+        Me.TextBoxJmbg.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxJmbg.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxJmbg.Location = New System.Drawing.Point(173, 113)
         Me.TextBoxJmbg.Name = "TextBoxJmbg"
@@ -152,7 +163,7 @@ Partial Class Form1Login
         '
         'ButtonEye
         '
-        Me.ButtonEye.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.ButtonEye.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.ButtonEye.BackgroundImage = Global.eDnevnik.My.Resources.Resources.eye_32x32
         Me.ButtonEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ButtonEye.Location = New System.Drawing.Point(321, 136)
@@ -196,19 +207,11 @@ Partial Class Form1Login
         Me.ButtonPrijava.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonPrijava.UseVisualStyleBackColor = True
         '
-        'lblId
-        '
-        Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(69, 100)
-        Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(0, 13)
-        Me.lblId.TabIndex = 12
-        '
         'Form1Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(525, 237)
         Me.Controls.Add(Me.TextBoxJmbg)
         Me.Controls.Add(Me.ButtonEye)

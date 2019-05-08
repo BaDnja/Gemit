@@ -131,6 +131,7 @@ Partial Class FormRegistracija
         '
         'TextBoxIme
         '
+        Me.TextBoxIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxIme.Location = New System.Drawing.Point(6, 19)
         Me.TextBoxIme.Name = "TextBoxIme"
@@ -140,6 +141,7 @@ Partial Class FormRegistracija
         '
         'TextBoxPrezime
         '
+        Me.TextBoxPrezime.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxPrezime.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxPrezime.Location = New System.Drawing.Point(6, 59)
         Me.TextBoxPrezime.Name = "TextBoxPrezime"
@@ -149,6 +151,7 @@ Partial Class FormRegistracija
         '
         'TextBoxJmbg
         '
+        Me.TextBoxJmbg.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxJmbg.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxJmbg.Location = New System.Drawing.Point(6, 94)
         Me.TextBoxJmbg.Name = "TextBoxJmbg"
@@ -158,6 +161,7 @@ Partial Class FormRegistracija
         '
         'TextBoxKorIme
         '
+        Me.TextBoxKorIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxKorIme.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxKorIme.Location = New System.Drawing.Point(6, 135)
         Me.TextBoxKorIme.Name = "TextBoxKorIme"
@@ -167,6 +171,7 @@ Partial Class FormRegistracija
         '
         'TextBoxSifra
         '
+        Me.TextBoxSifra.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxSifra.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxSifra.Location = New System.Drawing.Point(6, 173)
         Me.TextBoxSifra.Name = "TextBoxSifra"
@@ -176,6 +181,7 @@ Partial Class FormRegistracija
         '
         'TextBoxRod
         '
+        Me.TextBoxRod.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxRod.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxRod.Location = New System.Drawing.Point(6, 19)
         Me.TextBoxRod.Name = "TextBoxRod"
@@ -185,6 +191,7 @@ Partial Class FormRegistracija
         '
         'TextBoxAdresa
         '
+        Me.TextBoxAdresa.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxAdresa.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxAdresa.Location = New System.Drawing.Point(6, 57)
         Me.TextBoxAdresa.Name = "TextBoxAdresa"
@@ -194,6 +201,7 @@ Partial Class FormRegistracija
         '
         'TextBoxDatum
         '
+        Me.TextBoxDatum.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TextBoxDatum.ForeColor = System.Drawing.SystemColors.InactiveCaption
         Me.TextBoxDatum.Location = New System.Drawing.Point(6, 93)
         Me.TextBoxDatum.Name = "TextBoxDatum"
@@ -269,8 +277,9 @@ Partial Class FormRegistracija
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(460, 412)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ButtonNazad)
         Me.Controls.Add(Me.ButtonRegistracija)

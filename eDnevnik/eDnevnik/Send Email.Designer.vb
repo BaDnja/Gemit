@@ -35,6 +35,7 @@ Partial Class Send_Email
         '
         'TxtSubject
         '
+        Me.TxtSubject.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.TxtSubject.Location = New System.Drawing.Point(151, 12)
         Me.TxtSubject.Name = "TxtSubject"
         Me.TxtSubject.Size = New System.Drawing.Size(257, 20)
@@ -42,6 +43,7 @@ Partial Class Send_Email
         '
         'txtMessage
         '
+        Me.txtMessage.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtMessage.Location = New System.Drawing.Point(8, 82)
         Me.txtMessage.Name = "txtMessage"
         Me.txtMessage.Size = New System.Drawing.Size(467, 161)
@@ -106,6 +108,7 @@ Partial Class Send_Email
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(485, 287)
+        Me.ControlBox = False
         Me.Controls.Add(Me.ButtonNazad)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnSend)

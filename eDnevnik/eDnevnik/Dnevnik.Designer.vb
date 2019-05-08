@@ -54,18 +54,19 @@ Partial Class Dnevnik
         '
         'cmbSubject
         '
-        Me.cmbSubject.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.cmbSubject.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.cmbSubject.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cmbSubject.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbSubject.FormattingEnabled = True
         Me.cmbSubject.Location = New System.Drawing.Point(12, 50)
+        Me.cmbSubject.Margin = New System.Windows.Forms.Padding(5)
         Me.cmbSubject.Name = "cmbSubject"
         Me.cmbSubject.Size = New System.Drawing.Size(265, 23)
         Me.cmbSubject.TabIndex = 50
         '
         'CBScore
         '
-        Me.CBScore.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.CBScore.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.CBScore.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CBScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBScore.FormattingEnabled = True
@@ -96,7 +97,7 @@ Partial Class Dnevnik
         '
         'CBClass
         '
-        Me.CBClass.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.CBClass.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.CBClass.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CBClass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBClass.FormattingEnabled = True
@@ -107,7 +108,7 @@ Partial Class Dnevnik
         '
         'CBYear
         '
-        Me.CBYear.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.CBYear.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.CBYear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CBYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBYear.FormattingEnabled = True

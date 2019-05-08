@@ -65,6 +65,7 @@ Partial Class Form2Admin
         '
         Me.DataView.AllowUserToAddRows = False
         Me.DataView.AllowUserToDeleteRows = False
+        Me.DataView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.DataView.Location = New System.Drawing.Point(12, 236)
@@ -75,6 +76,7 @@ Partial Class Form2Admin
         '
         'txtIme
         '
+        Me.txtIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtIme.Location = New System.Drawing.Point(180, 12)
         Me.txtIme.Name = "txtIme"
         Me.txtIme.Size = New System.Drawing.Size(213, 20)
@@ -82,6 +84,7 @@ Partial Class Form2Admin
         '
         'txtPrezime
         '
+        Me.txtPrezime.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtPrezime.Location = New System.Drawing.Point(180, 39)
         Me.txtPrezime.Name = "txtPrezime"
         Me.txtPrezime.Size = New System.Drawing.Size(213, 20)
@@ -89,6 +92,7 @@ Partial Class Form2Admin
         '
         'txtRod
         '
+        Me.txtRod.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtRod.Location = New System.Drawing.Point(180, 69)
         Me.txtRod.Name = "txtRod"
         Me.txtRod.Size = New System.Drawing.Size(213, 20)
@@ -96,6 +100,7 @@ Partial Class Form2Admin
         '
         'txtAdresa
         '
+        Me.txtAdresa.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtAdresa.Location = New System.Drawing.Point(180, 102)
         Me.txtAdresa.Name = "txtAdresa"
         Me.txtAdresa.Size = New System.Drawing.Size(213, 20)
@@ -103,6 +108,7 @@ Partial Class Form2Admin
         '
         'txtDatumR
         '
+        Me.txtDatumR.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtDatumR.Location = New System.Drawing.Point(180, 131)
         Me.txtDatumR.Name = "txtDatumR"
         Me.txtDatumR.Size = New System.Drawing.Size(213, 20)
@@ -357,6 +363,7 @@ Partial Class Form2Admin
         '
         'txtSearch
         '
+        Me.txtSearch.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtSearch.Location = New System.Drawing.Point(225, 169)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(232, 20)
@@ -392,8 +399,9 @@ Partial Class Form2Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(792, 507)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblKorIme)
         Me.Controls.Add(Me.lblJmbg)

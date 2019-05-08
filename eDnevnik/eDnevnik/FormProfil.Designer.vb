@@ -104,6 +104,7 @@ Partial Class Profil
         '
         'txtDatumR
         '
+        Me.txtDatumR.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtDatumR.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDatumR.Location = New System.Drawing.Point(104, 144)
         Me.txtDatumR.Name = "txtDatumR"
@@ -112,6 +113,7 @@ Partial Class Profil
         '
         'txtAdresa
         '
+        Me.txtAdresa.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtAdresa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAdresa.Location = New System.Drawing.Point(104, 111)
         Me.txtAdresa.Name = "txtAdresa"
@@ -120,6 +122,7 @@ Partial Class Profil
         '
         'txtRod
         '
+        Me.txtRod.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtRod.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRod.Location = New System.Drawing.Point(104, 78)
         Me.txtRod.Name = "txtRod"
@@ -128,6 +131,7 @@ Partial Class Profil
         '
         'txtPrezime
         '
+        Me.txtPrezime.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtPrezime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrezime.Location = New System.Drawing.Point(104, 45)
         Me.txtPrezime.Name = "txtPrezime"
@@ -136,6 +140,7 @@ Partial Class Profil
         '
         'txtIme
         '
+        Me.txtIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtIme.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIme.Location = New System.Drawing.Point(104, 12)
         Me.txtIme.Name = "txtIme"
@@ -144,6 +149,7 @@ Partial Class Profil
         '
         'txtJmbg
         '
+        Me.txtJmbg.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtJmbg.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtJmbg.Location = New System.Drawing.Point(104, 177)
         Me.txtJmbg.Name = "txtJmbg"
@@ -153,6 +159,7 @@ Partial Class Profil
         '
         'txtKorIme
         '
+        Me.txtKorIme.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtKorIme.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKorIme.Location = New System.Drawing.Point(104, 210)
         Me.txtKorIme.Name = "txtKorIme"
@@ -277,6 +284,7 @@ Partial Class Profil
         '
         'txtClass
         '
+        Me.txtClass.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtClass.Location = New System.Drawing.Point(81, 46)
         Me.txtClass.Name = "txtClass"
         Me.txtClass.Size = New System.Drawing.Size(126, 20)
@@ -284,6 +292,7 @@ Partial Class Profil
         '
         'txtYear
         '
+        Me.txtYear.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtYear.Location = New System.Drawing.Point(81, 19)
         Me.txtYear.Name = "txtYear"
         Me.txtYear.Size = New System.Drawing.Size(126, 20)
@@ -293,7 +302,9 @@ Partial Class Profil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(565, 357)
+        Me.ControlBox = False
         Me.Controls.Add(Me.GroupBoxStud)
         Me.Controls.Add(Me.btnOpen)
         Me.Controls.Add(Me.btnEnableChanges)

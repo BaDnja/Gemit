@@ -35,6 +35,7 @@ Partial Class IzmjenaSifre
         '
         'txt1
         '
+        Me.txt1.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txt1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt1.Location = New System.Drawing.Point(139, 9)
         Me.txt1.Name = "txt1"
@@ -44,6 +45,7 @@ Partial Class IzmjenaSifre
         '
         'txt2
         '
+        Me.txt2.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txt2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt2.Location = New System.Drawing.Point(139, 47)
         Me.txt2.Name = "txt2"
@@ -123,6 +125,7 @@ Partial Class IzmjenaSifre
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(369, 175)
         Me.ControlBox = False
         Me.Controls.Add(Me.ButtonEye)

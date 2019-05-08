@@ -113,6 +113,7 @@ Partial Class Upit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(411, 124)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label5)
