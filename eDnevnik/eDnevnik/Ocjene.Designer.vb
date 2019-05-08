@@ -52,10 +52,9 @@ Partial Class Ocjene
         Me.DataView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataView.Location = New System.Drawing.Point(12, 52)
-        Me.DataView.MaximumSize = New System.Drawing.Size(0, 262)
         Me.DataView.Name = "DataView"
         Me.DataView.ReadOnly = True
-        Me.DataView.Size = New System.Drawing.Size(0, 262)
+        Me.DataView.Size = New System.Drawing.Size(280, 262)
         Me.DataView.TabIndex = 50
         '
         'txtFilter

@@ -5,6 +5,12 @@ Public Class Form2Admin
     Dim conn As String = database.connectionString
     Dim currentTable As String = String.Empty
 
+    Dim Ime As String
+    Dim prezime As String
+    Dim roditelj As String
+    Dim adresa As String
+    Dim datum As String
+
     ' Clear all input fields
     Private Sub clearAllFields()
         txtIme.Clear()
@@ -62,15 +68,28 @@ Public Class Form2Admin
         On Error Resume Next
         lblType.Text = DataView.Rows(e.RowIndex).Cells(1).Value
         lblType.Hide()
+
         txtIme.Text = DataView.Rows(e.RowIndex).Cells(2).Value
+        Ime = txtIme.Text
+
         txtPrezime.Text = DataView.Rows(e.RowIndex).Cells(3).Value
+        prezime = txtPrezime.Text
+
         txtRod.Text = DataView.Rows(e.RowIndex).Cells(4).Value
+        roditelj = txtRod.Text
+
         lblJmbg.Text = DataView.Rows(e.RowIndex).Cells(5).Value
         lblJmbg.Hide()
+
         txtAdresa.Text = DataView.Rows(e.RowIndex).Cells(6).Value
+        adresa = txtAdresa.Text
+
         txtDatumR.Text = DataView.Rows(e.RowIndex).Cells(7).Value
+        datum = txtDatumR.Text
+
         lblKorIme.Text = DataView.Rows(e.RowIndex).Cells(8).Value
         lblKorIme.Hide()
+
         lblPassword.Text = DataView.Rows(e.RowIndex).Cells(9).Value
         lblPassword.Hide()
     End Sub
@@ -109,17 +128,21 @@ Public Class Form2Admin
     End Function
 
     ' update
-    Private Sub update()
+    Private Sub updateUser()
         Dim sql As String = String.Format("UPDATE tbl_user SET user_first_name= '{0}', user_last_name= '{1}', user_parent_name= '{2}',
-                            user_address= '{3}', user_birthdate= '{4}' WHERE user_jmbg= {5};",
+                            user_address= '{3}', user_birthdate= '{4}' WHERE user_jmbg= '{5}';",
                             txtIme.Text, txtPrezime.Text, txtRod.Text, txtAdresa.Text, txtDatumR.Text, lblJmbg.Text)
 
-        Dim execute As Boolean = executeNonQuery(sql)
-        If execute = True Then
-            importAndRefresh(currentTable)
-            MessageBox.Show("Ažuriranje uspjelo!")
+        If Ime = txtIme.Text And prezime = txtPrezime.Text And roditelj = txtRod.Text And adresa = txtAdresa.Text And datum = txtDatumR.Text Then
+            MessageBox.Show("Niste izmijenili podatke!")
+            Exit Sub
         Else
-            MessageBox.Show("Prvo odaberite osobu koju želite pregledati a zatim izvršite ažuriranje!")
+            If executeNonQuery(sql) Then
+                importAndRefresh(currentTable)
+                MessageBox.Show("Ažuriranje uspjelo!")
+            Else
+                MessageBox.Show("Prvo odaberite osobu koju želite pregledati a zatim izvršite ažuriranje!")
+            End If
         End If
     End Sub
 
@@ -217,18 +240,17 @@ Public Class Form2Admin
 
     ' execute non query
     Public Function executeNonQuery(command As String) As Boolean
-        Dim value As Boolean = False
         Using SqlConn As New SQLiteConnection(conn)
             Try
                 SqlConn.Open()
                 Dim cmd As New SQLiteCommand(command, SqlConn)
                 cmd.ExecuteNonQuery()
                 SqlConn.Close()
-                value = True
+                Return True
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MessageBox.Show("execute non sql error: " + ex.Message)
             End Try
-            Return value
+            Return False
         End Using
 
     End Function
@@ -282,7 +304,7 @@ Public Class Form2Admin
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        update()
+        updateUser()
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click

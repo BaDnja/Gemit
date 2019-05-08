@@ -153,18 +153,17 @@ Public Class Profil
 
     ' execute non query
     Public Function executeNonQuery(command As String) As Boolean
-        Dim value As Boolean = False
         Using SqlConn As New SQLiteConnection(conn)
             Try
                 SqlConn.Open()
                 Dim cmd As New SQLiteCommand(command, SqlConn)
                 cmd.ExecuteNonQuery()
                 SqlConn.Close()
-                value = True
+                Return True
             Catch ex As Exception
                 MessageBox.Show("execute non sql error: " + ex.Message)
             End Try
-            Return value
+            Return False
         End Using
 
     End Function

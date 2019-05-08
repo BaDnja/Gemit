@@ -36,8 +36,13 @@
         Profil.Show()
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtFilter.TextChanged
-        displayData("tbl_subject", "subject_name", txtFilter.Text)
+    Private Sub txtFilter1_TextChanged(sender As Object, e As EventArgs) Handles txtFilter.TextChanged
+        If txtFilter.Text = "" Then
+            displayData("tbl_score", "user_id", Profil.m_user_id)
+        Else
+            displayData("tbl_subject", "subject_name", txtFilter.Text)
+        End If
+
     End Sub
 
     Private Sub Ocjene_Load(sender As Object, e As EventArgs) Handles MyBase.Load

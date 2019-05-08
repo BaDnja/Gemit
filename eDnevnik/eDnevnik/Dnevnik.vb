@@ -72,6 +72,7 @@ Public Class Dnevnik
                 Try
                     connection.Open()
                     Profil.executeNonQuery(sql)
+                    MessageBox.Show("Ocjena uspješno dodijeljena")
                     connection.Close()
                 Catch ex As Exception
                     connection.Close()
