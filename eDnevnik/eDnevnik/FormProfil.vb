@@ -47,7 +47,6 @@ Public Class Profil
         Catch ex As Exception
             conn.Dispose()
             MsgBox("1: " + ex.Message)
-            Exit Function
         End Try
         Return value
     End Function
