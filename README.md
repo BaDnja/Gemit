@@ -1,5 +1,5 @@
 # Gemit
-Windows Desktop School Score Management System
+School Scoring Management System (for Windows Desktop Platform)
 
 ## Application Sections
 
